@@ -10,12 +10,6 @@
 			border-style: dashed;
 		}
 	</style>
-	<script>
-		var c = document.getElementById("canvas");
-		var ctx = c.getContext("2d");
-		ctx.fillStyle = "#FF0000";
-		ctx.fillRect(0, 0, 80, 80);
-	</script>
 </head>
 
 <body>
@@ -106,6 +100,12 @@
 		</aside>
 		<iframe src="https://www.google.com" title="Google Search"></iframe>
 		<canvas id="canvas">This is supposed to be a red square.</canvas>
+		<script>
+			var c = document.getElementById("canvas");
+			var ctx = c.getContext("2d");
+			ctx.fillStyle = "#FF0000";
+			ctx.fillRect(0, 0, 80, 80);
+		</script>
 	</footer>
 </body>
 
