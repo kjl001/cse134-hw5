@@ -98,7 +98,9 @@
 		<aside>
 			<p>This is just an experimental part of this site.</p>
 		</aside>
+
 		<iframe src="https://www.google.com/" title="Google Search"></iframe>
+
 		<canvas id="canvas">This is supposed to be a red square.</canvas>
 		<script>
 			var c = document.getElementById("canvas");
@@ -106,7 +108,9 @@
 			ctx.fillStyle = "#FF0000";
 			ctx.fillRect(0, 0, 80, 80);
 		</script>
+
 		<svg width="50" height="50"><circle cx="50" cy="50" r="50" stroke="red" stroke-width="5" fill="green"></circle></svg>
+
 		<label for="colors">Choose a color:</label>
 		<select name="colors" id="colors">
 			<optgroup label="Primary Colors">
@@ -120,6 +124,15 @@
 				<option value="cyan">Cyan</option>
 			</optgroup>
 		</select>
+
+		<label for="bread">Choose your favorite bread:</label>
+		<input list="breadList" name="bread" id="bread">
+		<datalist id="breadList">
+			<option value="White"></option>
+			<option value="Whole Wheat"></option>
+			<option value="Multigrain"></option>
+			<option value="Sourdough"></option>
+		</datalist>
 	</footer>
 </body>
 
