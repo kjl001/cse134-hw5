@@ -11,7 +11,10 @@
 		}
 	</style>
 	<script>
-
+		var c = document.getElementById("canvas");
+		var ctx = c.getContext("2d");
+		ctx.fillStyle = "#FF0000";
+		ctx.fillRect(0, 0, 80, 80);
 	</script>
 </head>
 
@@ -62,6 +65,11 @@
 				<li>Project 4</li>
 				<li>Project 5</li>
 			</ol>
+			<h3>Project Demos</h3>
+			<video width="240" height="240" controls>
+				<source src="video/project.mp4" type="video/mp4" />
+				Your browser does not support MP4 videos.
+			</video>
 		</section>
 
 		<hr />
@@ -93,6 +101,11 @@
 		<hr />
 
 		<h3>Experiments</h3>
+		<aside>
+			<p>This is just an experimental part of this site.</p>
+		</aside>
+		<iframe src="https://www.google.com" title="Google Search"></iframe>
+		<canvas id="canvas">This is supposed to be a red square.</canvas>
 	</footer>
 </body>
 
