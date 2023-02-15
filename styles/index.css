@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body {
 	display: grid;
 	grid-template-columns: 50% 50%;
@@ -7,7 +9,7 @@ body {
 		"main image"
 		"footer footer";
 	background-color: #dee0df;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	margin: 30px 10px 0px 10px;
 }
 
