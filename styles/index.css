@@ -6,7 +6,7 @@ body {
 		"header header"
 		"main image"
 		"footer footer";
-	background-color: #ccc9c6;
+	background-color: #dee0df;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -20,12 +20,17 @@ header {
 	align-self: center;
 }
 
+#title > h1 {
+	margin: 0px;
+	padding-left: 20px;
+}
+
 #image {
 	grid-area: image;
 }
 
 #image > img {
-	width: 50vw;
+	width: 45vw;
 	max-width: 100%;
 	height: auto;
 	border-radius: 12px;
