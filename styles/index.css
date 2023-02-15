@@ -12,11 +12,11 @@ header {
 	grid-area: header;
 }
 
-#title {
-	grid-area: main !important;
+main-title {
+	grid-area: main;
 }
 
-#image {
+main-image {
 	grid-area: image;
 }
 
