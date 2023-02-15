@@ -15,12 +15,12 @@ header {
 
 #title {
 	grid-area: main;
+	align-self: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #image {
 	grid-area: image;
-	grid-column-start: 2;
-	grid-column-end: 3;
 }
 
 #image > img {
