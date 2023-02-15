@@ -20,10 +20,6 @@ header {
 	align-self: center;
 }
 
-#title > h1 {
-	max-width: 22em;
-}
-
 #image {
 	grid-area: image;
 }
