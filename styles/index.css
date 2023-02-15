@@ -13,6 +13,7 @@ header {
 }
 
 #title {
+	padding: 0;
 	grid-area: main;
 	grid-row-start: auto;
 	grid-row-end: auto;
