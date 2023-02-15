@@ -6,6 +6,8 @@ body {
 		"header header"
 		"main image"
 		"footer footer";
+	background-color: #ccc9c6;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -16,7 +18,7 @@ header {
 #title {
 	grid-area: main;
 	align-self: center;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 2em;
 }
 
 #image {
