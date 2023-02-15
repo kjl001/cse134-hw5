@@ -22,6 +22,8 @@ main-title {
 
 main-image {
 	grid-area: image;
+	grid-column-start: 2;
+	grid-column-end: 3;
 }
 
 footer {
