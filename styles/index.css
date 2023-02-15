@@ -18,7 +18,10 @@ header {
 #title {
 	grid-area: main;
 	align-self: center;
-	font-size: 2em;
+}
+
+#title > h1 {
+	max-width: 22em;
 }
 
 #image {
@@ -29,6 +32,7 @@ header {
 	width: 50vw;
 	max-width: 100%;
 	height: auto;
+	border-radius: 12px;
 }
 
 footer {
