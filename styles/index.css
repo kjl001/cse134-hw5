@@ -8,9 +8,6 @@ body {
 		"footer footer";
 }
 
-div {
-	display: grid;
-}
 
 header {
 	grid-area: header;
@@ -24,6 +21,12 @@ header {
 	grid-area: image;
 	grid-column-start: 2;
 	grid-column-end: 3;
+}
+
+#image > img {
+	width: 50vw;
+	max-width: 100%;
+	height: auto;
 }
 
 footer {
