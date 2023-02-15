@@ -8,11 +8,13 @@ body {
 		"footer footer";
 	background-color: #dee0df;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 30px 10px 0px 10px;
 }
 
 
 header {
 	grid-area: header;
+	font-size: 2vw;
 }
 
 #title {
@@ -23,6 +25,7 @@ header {
 #title > h1 {
 	margin: 0px;
 	padding-left: 20px;
+	font-size: 3vw;
 }
 
 #image {
