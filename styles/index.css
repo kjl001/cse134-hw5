@@ -12,15 +12,19 @@ main {
 	display: grid;
 }
 
+div {
+	display: grid;
+}
+
 header {
 	grid-area: header;
 }
 
-main-title {
+#title {
 	grid-area: main;
 }
 
-main-image {
+#image {
 	grid-area: image;
 	grid-column-start: 2;
 	grid-column-end: 3;
