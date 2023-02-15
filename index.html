@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kevin Lee's Personal Portfolio</title>
 	<link href="images/favicon.ico" rel="icon">
+	<link rel="stylesheet" herf="styles/index.css">
 	<style>
 		#footer {
 			border-style: dashed;
@@ -18,21 +19,26 @@
 
 <body>
 	<header>
-		<h1>Hello, I'm Kevin Lee</h1>
-		<p>I am a 4th Year, Computer Science major</p>
-		<i>This site is all you can know about me.</i>
-		<audio controls>
-			<source src="audio/intro.mp3" type="audio/mp3">
-			Your browser does not support mp3 audio.
-		</audio>
+		<ul>
+			<li><a href="./about.html">About Me</a></li>
+			<li><a href="./projects.html">Projects</a></li>
+			<li><a href="./resume.html">Resume</a></li>
+			<li><a href="./contact.html">Contact Me</a></li>
+		</ul>
 	</header>
 	<main>
-		<nav>
-			<a href="./about.html">About Me</a>
-			<a href="./projects.html">My Projects</a>
-			<a href="./resume.html">Resume</a>
-			<a href="./contact.html">Contact Me</a>
-		</nav>
+		<section id="title">
+			<h1>Hello, I'm Kevin Lee</h1>
+			<p>I am a 4th Year, Computer Science major</p>
+			<i>This site is all you can know about me.</i>
+		</section>
+		<section id="image">
+			<picture>
+				<source media="(min-width:650px)" srcset="images/person.jpg">
+				<source media="(min-width:465px)" srcset="images/person2.jpg">
+				<img src="images/person2.jpg" alt="temporary fake image" width="200" height="200">
+			</picture>
+		</section>
 	</main>
 	<footer>
 		<div id="footer">
@@ -41,127 +47,6 @@
 				<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">YouTube</a>
 			</nav>
 		</div>
-
-		<hr>
-
-		<h3>Experiments</h3>
-		<aside>
-			<p>This is just an experimental part of this site.</p>
-		</aside>
-
-		<iframe src="https://www.google.com/" title="Google Search"></iframe>
-
-		<canvas id="canvas">This is supposed to be a red square.</canvas>
-		<script>
-			var c = document.getElementById("canvas");
-			var ctx = c.getContext("2d");
-			ctx.fillStyle = "#FF0000";
-			ctx.fillRect(0, 0, 80, 80);
-		</script>
-
-		<svg width="50" height="50"><circle cx="50" cy="50" r="50" stroke="red" stroke-width="5" fill="green"></circle></svg>
-
-		<br>
-
-		<label for="colors">Choose a color:</label>
-		<select name="colors" id="colors">
-			<optgroup label="Primary Colors">
-				<option value="red">Red</option>
-				<option value="green">Green</option>
-				<option value="blue">Blue</option>
-			</optgroup>
-			<optgroup label="Secondary Colors">
-				<option value="yellow">Yellow</option>
-				<option value="magenta">Magenta</option>
-				<option value="cyan">Cyan</option>
-			</optgroup>
-		</select>
-
-		<br>
-
-		<label for="bread">Choose your favorite bread:</label>
-		<input list="breadList" name="bread" id="bread">
-		<datalist id="breadList">
-			<option value="White"></option>
-			<option value="Whole Wheat"></option>
-			<option value="Multigrain"></option>
-			<option value="Sourdough"></option>
-		</datalist>
-
-		<br>
-
-		<details>
-			<summary>Homework 2</summary>
-			<p>This homework is to practice using many different HTML tags without CSS/JS.</p>
-		</details>
-
-		<br>
-		
-		<button type="button">I Do Nothing!</button>
-		<template>
-			<button type="button">I can't be seen</button>
-		</template>
-
-		<br>
-
-		<table>
-			<caption>Days in each month</caption>
-			<colgroup>
-				<col span="2">
-			</colgroup>
-			<tr>
-				<th>Month</th>
-				<th>Days</th>
-			</tr>
-			<tr>
-				<td>January</td>
-				<td>31</td>
-			</tr>
-			<tr>
-				<td>Feburary</td>
-				<td>28/29</td>
-			</tr>
-			<tr>
-				<td>March</td>
-				<td>31</td>
-			</tr>
-			<tr>
-				<td>April</td>
-				<td>30</td>
-			</tr>
-			<tr>
-				<td>May</td>
-				<td>31</td>
-			</tr>
-			<tr>
-				<td>June</td>
-				<td>30</td>
-			</tr>
-			<tr>
-				<td>July</td>
-				<td>31</td>
-			</tr>
-			<tr>
-				<td>August</td>
-				<td>31</td>
-			</tr>
-			<tr>
-				<td>September</td>
-				<td>30</td>
-			</tr>
-			<tr>
-				<td>October</td>
-				<td>31</td>
-			</tr>
-			<tr>
-				<td>November</td>
-				<td>30</td>
-			</tr>
-			<tr>
-				<td>December</td>
-				<td>31</td>
-			</tr>
-		</table>
 	</footer>
 </body>
 
