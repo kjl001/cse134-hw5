@@ -17,6 +17,8 @@ body {
 header {
 	grid-area: header;
 	font-size: 2vw;
+	width: 100%;
+	position: fixed;
 }
 
 #title {
