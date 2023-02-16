@@ -55,7 +55,7 @@ input[type=text], input[type=email], textarea {
 }
 
 input[type=submit] {
-	background-color: #65aac9;
+	background-color: #ffed00;
 	color: white;
 	padding: 12px 20px;
 	border: none;
@@ -64,11 +64,11 @@ input[type=submit] {
 }
 
 	input[type=submit]:hover {
-		background-color: #3b6578;
+		background-color: #dae18d;
 	}
 
 form {
-	background-color: #d4d4d6;
+	background-color: #dcdcae;
 	border-radius: 6px;
 	padding: 20px;
 }
