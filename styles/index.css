@@ -10,6 +10,7 @@ body {
 		"footer footer";
 	font-family: 'Open Sans', sans-serif;
 	margin: 30px 10px 0px 10px;
+	background-color: #dee0df;
 }
 
 
@@ -26,7 +27,6 @@ header {
 }
 
 	#title > h1 {
-		background-color: #dee0df;
 		margin: 0px;
 		padding-left: 20px;
 		font-size: 3vw;
