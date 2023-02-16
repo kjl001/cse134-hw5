@@ -43,7 +43,7 @@ main {
 	background-color: #111;
 }
 
-input[type=text], textarea {
+input[type=text], input[type=email], textarea {
 	width: 100%;
 	padding: 12px;
 	border: 1px solid #ccc;
@@ -55,7 +55,7 @@ input[type=text], textarea {
 }
 
 input[type=submit] {
-	background-color: ##4bab7b;
+	background-color: #4bab7b;
 	color: white;
 	padding: 12px 20px;
 	border: none;
@@ -69,4 +69,6 @@ input[type=submit] {
 
 form {
 	background-color: #d4d4d6;
+	border-radius: 6px;
+	padding: 20px;
 }
