@@ -30,6 +30,18 @@ body {
 	background-color: darkslategray;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+}
+
 main > h1 {
 	color: white;
+}
+
+.resume {
+	background-color: #dee0df;
+	border-radius: 6px;
+	padding: 5px;
 }
