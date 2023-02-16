@@ -45,3 +45,7 @@ main > h1 {
 	border-radius: 6px;
 	padding: 5px;
 }
+
+#education > p {
+	font-size: 0.8em;
+}
