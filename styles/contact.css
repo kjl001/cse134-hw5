@@ -3,6 +3,20 @@
 body {
 	background-color: #dee0df;
 	font-family: 'Open Sans', sans-serif;
+
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+	grid-template-areas:
+		"header"
+		"main";
+}
+
+header {
+	grid-area: header;
+}
+
+main {
+	grid-area: main;
 }
 
 #navbar {
@@ -32,7 +46,7 @@ body {
 
 input, textarea {
 	color: #1f252b;
-	width: 100%;
+	width: 50%;
 	padding: 12px 16px;
 	border-radius: 0;
 	border: 0;
