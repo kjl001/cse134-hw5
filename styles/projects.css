@@ -1,9 +1,28 @@
+body {
+	background-color: #918fb8;
+	font-family: 'Open Sans', sans-serif;
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+	grid-template-areas:
+		"header"
+		"main";
+}
+
+header {
+	grid-area: header;
+}
+
+main {
+	grid-area: main;
+}
+
 #navbar {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	background-color: slategray;
+	font-size: 2vw;
 }
 
 #navbar > li {
