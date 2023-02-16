@@ -29,3 +29,7 @@ body {
 #navbar > li a:hover {
 	background-color: darkslategray;
 }
+
+main > h1 {
+	color: white;
+}
