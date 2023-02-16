@@ -62,14 +62,14 @@ nav > a:hover {
 }
 
 #proj1-img {
-	width: 100px;
-	height: 100px;
-	transition: width 2s, height 4s;
+	width: 50%;
+	height: 50%;
+	transition: width 1s, height 1s;
 }
 
 #proj1-img:hover {
-	width: 300px;
-	height: 300px;
+	width: 65%;
+	height: 65%;
 }
 
 #proj1 > h2 {
