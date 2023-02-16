@@ -1,19 +1,14 @@
 body {
 	background-color: white;
 	font-family: 'Open Sans', sans-serif;
-	display: grid;
-	grid-template-rows: 1fr 4fr;
-	grid-template-areas:
-		"header"
-		"main";
 }
 
 header {
-	grid-area: header;
 }
 
 main {
-	grid-area: main;
+	display: flex;
+	flex-direction: column;
 }
 
 #navbar {
