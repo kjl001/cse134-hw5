@@ -10,7 +10,8 @@ body {
 		"footer footer";
 	font-family: 'Open Sans', sans-serif;
 	margin: 30px 10px 0px 10px;
-	background-color: #dee0df;
+	background: rgb(2,0,36);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,120,121,1) 52%, rgba(0,212,255,1) 100%);
 }
 
 
@@ -45,11 +46,12 @@ header {
 
 footer {
 	grid-area: footer;
+	color: lightblue;
 }
 
 footer > nav > a {
 	text-decoration: none;
-	color: #017698;
+	color: lightblue;
 }
 
 footer > nav > a:hover {
