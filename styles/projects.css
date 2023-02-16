@@ -1,5 +1,5 @@
 body {
-	background-color: #dee0df;
+	background-color: white;
 	font-family: 'Open Sans', sans-serif;
 	display: grid;
 	grid-template-rows: 1fr 4fr;
@@ -50,4 +50,10 @@ main {
 #proj1-img:hover {
 	width: 300px;
 	height: 300px;
+}
+
+#proj1 {
+	background-color: #dee0df;
+	border-radius: 6px;
+	max-width: 60px;
 }
