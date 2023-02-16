@@ -9,6 +9,11 @@ header {
 main {
 	display: flex;
 	flex-direction: column;
+	row-gap: 30px;
+}
+
+main > h1 {
+	margin-bottom: 0px;
 }
 
 #navbar {

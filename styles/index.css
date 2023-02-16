@@ -8,7 +8,6 @@ body {
 		"header header"
 		"main image"
 		"footer footer";
-	background-color: #dee0df;
 	font-family: 'Open Sans', sans-serif;
 	margin: 30px 10px 0px 10px;
 }
@@ -26,11 +25,12 @@ header {
 	align-self: center;
 }
 
-#title > h1 {
-	margin: 0px;
-	padding-left: 20px;
-	font-size: 3vw;
-}
+	#title > h1 {
+		background-color: #dee0df;
+		margin: 0px;
+		padding-left: 20px;
+		font-size: 3vw;
+	}
 
 #image {
 	grid-area: image;
