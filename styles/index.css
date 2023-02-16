@@ -19,7 +19,6 @@ header {
 	grid-area: header;
 	font-size: 2vw;
 	width: 100%;
-	position: fixed;
 }
 
 #title {
@@ -71,14 +70,15 @@ footer > nav > a:hover {
 	float: left;
 }
 
-#navbar > li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
+	#navbar > li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+	}
 
-#navbar > li a:hover {
-	background-color: darkslategray;
-}
+	#navbar > li a:hover {
+		box-shadow: inset 0 5em darkslategray;
+	}
