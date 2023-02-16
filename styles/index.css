@@ -47,10 +47,11 @@ footer {
 
 footer > nav > a {
 	text-decoration: none;
+	color: #017698;
 }
 
 footer > nav > a:hover {
-	color: darkred;
+	text-decoration: underline;
 }
 
 #navbar {
