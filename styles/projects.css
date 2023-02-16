@@ -55,5 +55,13 @@ main {
 #proj1 {
 	background-color: #dee0df;
 	border-radius: 6px;
-	max-width: 60px;
+	padding: 5px;
+}
+
+#proj1 > h2 {
+	text-decoration: underline;
+}
+
+#proj1 > p {
+	max-width: 50em;
 }
