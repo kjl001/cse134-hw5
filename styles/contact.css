@@ -23,7 +23,7 @@ main {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #333;
+	background-color: slategray;
 	font-size: 2vw;
 }
 
@@ -40,7 +40,7 @@ main {
 }
 
 #navbar > li a:hover {
-	background-color: #111;
+	background-color: darkslategray;
 }
 
 input[type=text], input[type=email], textarea {
