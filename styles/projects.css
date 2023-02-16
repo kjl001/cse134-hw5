@@ -62,6 +62,6 @@ main {
 	text-decoration: underline;
 }
 
-#proj1 > p {
+#proj1 > pre {
 	max-width: 50em;
 }
