@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body {
-	background: rgb(84,5,97);
-	background: radial-gradient(circle, rgba(84,5,97,1) 0%, rgba(133,60,147,1) 37%);
+	background-color: #918fb8;
 	font-family: 'Open Sans', sans-serif;
 	display: grid;
 	grid-template-rows: 1fr 4fr;

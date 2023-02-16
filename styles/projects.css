@@ -5,9 +5,6 @@ body {
 	background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,120,121,1) 28%, rgba(0,212,255,1) 100%);
 }
 
-header {
-}
-
 main {
 	display: flex;
 	flex-direction: column;
@@ -79,4 +76,9 @@ nav > a:hover {
 #proj1 > p {
 	max-width: 50em;
 	white-space: normal;
+}
+
+aside > p {
+	margin-top: 0px;
+	font-size: 0.9em;
 }
