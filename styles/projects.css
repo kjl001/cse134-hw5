@@ -61,13 +61,13 @@ nav > a:hover {
 	padding: 5px;
 }
 
-#proj1-img {
+#proj1-img > img {
 	width: 50%;
 	height: 50%;
 	transition: width 1s, height 1s;
 }
 
-#proj1-img:hover {
+#proj1-img > img:hover {
 	width: 65%;
 	height: 65%;
 }
