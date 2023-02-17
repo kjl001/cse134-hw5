@@ -98,7 +98,7 @@ main {
 @media (max-width: 600px) {
 	.menu-button-container {
 		display: flex;
-		margin-top: -50px;
+		margin-top: 20px;
 	}
 
 	#navbar {
