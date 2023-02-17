@@ -82,7 +82,7 @@ body {
 		transform: rotate(-405deg);
 	}
 
-@media (hover: none) {
+@media (max-width: 640px) {
 	.menu-button-container {
 		display: flex;
 		margin-top: 20px;
