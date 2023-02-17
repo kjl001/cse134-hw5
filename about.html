@@ -25,14 +25,19 @@
 	</header>
 	<main>
 		<h1>About Me</h1>
-		<picture>
-			<source media="(min-width:600px)" srcset="images/person.jpg">
-			<source media="(min-width:465px)" srcset="images/person2.jpg">
-			<img src="images/person2.jpg" alt="temporary fake image" width="200" height="200">
-		</picture>
-		<strong>Remember to replace</strong>
-		<pre>Fill this space in with information about me and other   <em>misc.</em>   items</pre>
-		<p>A personal hobby is to create my own small games using <code>GameMaker Studio</code> to practice my skills.</p>
+		<section id="container">
+			<section id="portrait">
+				<picture>
+					<source media="(min-width:600px)" srcset="images/placeholder_avatar.jpg">
+					<img src="images/placeholder_avatar.webp" alt="Placeholder avatar image.">
+				</picture>
+			</section>
+
+			<section id="about">
+				<pre>Fill this space in with information about me and other   <em>misc.</em>   items</pre>
+				<p>A personal hobby is to create my own small games using <code>GameMaker Studio</code> to practice my skills.</p>
+			</section>
+		</section>
 	</main>
 </body>
 </html>

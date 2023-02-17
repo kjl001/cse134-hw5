@@ -133,7 +133,7 @@ footer > nav > a:hover {
 		transform: rotate(-405deg);
 	}
 
-@media (max-width: 600px) {
+@media (hover: none) {
 	.menu-button-container {
 		display: flex;
 		margin-top: -50px;
