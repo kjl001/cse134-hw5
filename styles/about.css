@@ -85,7 +85,7 @@ body {
 @media (max-width: 600px) {
 	.menu-button-container {
 		display: flex;
-		margin-top: -55px;
+		margin-top: 20px;
 	}
 
 	#navbar {
