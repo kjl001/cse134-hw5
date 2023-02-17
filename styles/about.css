@@ -8,11 +8,30 @@ body {
 main {
 	display: flex;
 	flex-direction: row;
+	column-gap: 10px;
+	margin-top: 40px;
+	flex-wrap: wrap;
 }
 
-main > h1 {
-	color: white;
+	main > h1 {
+		color: white;
+	}
+
+#portrait > picture img {
+	width: 50vw;
+	height: auto;
 }
+
+#about {
+	color: white;
+	width: 50vw;
+	height: auto;
+}
+
+	#about > p {
+		white-space: normal;
+		max-width: 50em;
+	}
 
 #navbar {
 	list-style-type: none;
