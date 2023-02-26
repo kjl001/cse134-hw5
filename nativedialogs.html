@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Dialogs Page">
+	<meta name="keywords" content="HTML">
+	<meta name="author" content="Kevin Lee">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kevin Lee's Personal Portfolio</title>
+	<link href="images/favicon.ico" rel="icon">
+</head>
+
+<body>
+	<header>
+		<input id="menu-toggle" type="checkbox">
+		<label class="menu-button-container" for="menu-toggle">
+			<div class="menu-button"></div>
+		</label>
+		<ul id="navbar">
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./about.html">About Me</a></li>
+			<li><a href="./projects.html">Projects</a></li>
+			<li><a href="./resume.html">Resume</a></li>
+			<li><a href="./contact.html">Contact Me</a></li>
+			<li><a href="./nativedialogs.html">Dialogs</a></li>
+		</ul>
+	</header>
+
+	<main>
+		<h1>Simple Dialogs?</h1>
+
+		<button type="button" id="alert">Alert</button>
+		<button type="button">Confirm</button>
+		<button type="button">Prompt</button>
+		<button type="button">Safer Prompt</button>
+
+		<form>
+			<input type="button" name="alert" id="alert" value="Alert">
+			<input type="button" name="confirm" id="confirm" value="Confirm">
+			<input type="button" name="prompt" id="prompt" value="Prompt">
+			<input type="button" name="safe-prompt" id="safe-prompt" value="Safer Prompt">
+			<output name="confirmed" for="confirm" id="confirmed"></output>
+		</form>
+	</main>
+
+</body>
+
+</html>
+
+<script>
+	function showAlert() {
+		alert("Alert pressed!");
+	}
+
+	function isConfirmed() {
+		let value = "The value returned by the confirmed method is : ";
+		if (confirm("Do you confirm this?")) {
+			value += "True";
+		}
+		else {
+			value += "False";
+		}
+		document.getElementById("confirmed").innerText = value;
+	}
+
+	const alert = document.getElementById("alert");
+	alert.addEventListener("click", showAlert);
+
+
+</script>
