@@ -40,11 +40,6 @@
 	</main>
 
 	<script>
-		const alertBt = document.getElementById("alert");
-		alertBt.addEventListener("click", () => { alert("Alert pressed!") });
-		const confirm = document.getElementById("confirm");
-		confirm.addEventListener("click", isConfirmed);
-
 		function isConfirmed() {
 			let value = "The value returned by the confirmed method is : ";
 			if (confirm("Do you confirm this?")) {
@@ -55,6 +50,11 @@
 			}
 			document.getElementById("confirmed").innerText = value;
 		}
+
+		const alertBt = document.getElementById("alert");
+		alertBt.addEventListener("click", () => { alert("Alert pressed!") });
+		const confirmBt = document.getElementById("confirm");
+		confirmBt.addEventListener("click", isConfirmed);
 	</script>
 </body>
 
