@@ -44,6 +44,7 @@
 
 	<script>
 		function isConfirmed() {
+			document.getElementById("confirmed").innerText = "";
 			let value = "The value returned by the confirmed method is : ";
 			if (confirm("Do you confirm this?")) {
 				value += "True";
@@ -55,6 +56,7 @@
 		}
 
 		function getPrompt() {
+			document.getElementById("confirmed").innerHTML = "";
 			let value = prompt("What is your name?");
 			if (value != null) {
 				document.getElementById("confirmed").innerHTML = "Prompt result : " + value;
@@ -77,6 +79,7 @@
 		}
 
 		function safeFunc() {
+			document.getElementById("confirmed").innerHTML = "";
 			const value = "";
 			const output = getSafePrompt`Prompt result : ${value} User didn't enter anything`;
 			document.getElementById("confirmed").innerHTML = output;
