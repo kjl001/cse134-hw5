@@ -67,7 +67,7 @@
 			let str0 = strings[0];
 			let str1 = strings[1];
 			let input = DOMPurify.sanitize(prompt("What is your name?"));
-			if (value != null) {
+			if (value != "") {
 				return `${str0}${input}`;
 			}
 			else {
@@ -82,6 +82,7 @@
 		const promptBt = document.getElementById("prompt");
 		promptBt.addEventListener("click", getPrompt);
 		const safePromptBt = document.getElementById("safe-prompt");
+		const value = "";
 		const output = getSafePrompt`Prompt result : ${value} User didn't enter anything`;
 		document.getElementById("confirmed").innerHTML = output;
 	</script>
