@@ -6,8 +6,8 @@ export let config = {
 export function showAlert() {
 	document.getElementById("diagLabel").innerText = "Alert pressed!";
 	document.getElementById("input").setAttribute("type", "hidden");
-	document.getElementById("cancel").setAttribute("type", "hidden");
-	document.getElementById("confirmed").innerHTML = "";
+	document.getElementById("cancel").setAttribute("hidden", "hidden");
+	document.getElementById("confirmed").setAttribute("hidden", "hidden");
 	document.getElementById("diagBox").showModal();
 
 }
@@ -17,7 +17,8 @@ export function showConfirm() {
 	diagLabel.innerText = "Do you confirm this?";
 	document.getElementById("input").setAttribute("type", "hidden");
 
-	document.getElementById("cancel").setAttribute("type", "button")
+	document.getElementById("cancel").removeAttribute("hidden");
+	document.getElementById("confirmed").removeAttribute("hidden");
 
 	document.getElementById("diagBox").showModal();
 }
@@ -29,7 +30,8 @@ export function showPrompt() {
 	const txtInput = document.getElementById("input");
 	txtInput.setAttribute("type", "text");
 
-	document.getElementById("cancel").setAttribute("type", "button");
+	document.getElementById("cancel").removeAttribute("hidden");
+	document.getElementById("confirmed").removeAttribute("hidden");
 
 	const diag = document.getElementById("diagBox");
 	diag.showModal();
