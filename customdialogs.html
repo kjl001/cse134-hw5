@@ -64,7 +64,6 @@
 		diagBox.addEventListener("close", () => {
 			/* take value from text box */
 			config.value = DOMPurify.sanitize(diagBox.returnValue);
-			document.getElementById("ok").value = "";
 			document.getElementById("input").value = "";
 			showOutput();
 		});
