@@ -55,6 +55,7 @@
 	</main>
 
 	<script type="module">
+		import { showAlert } from './scripts/customdialog.js';
 		import { showConfirm } from './scripts/customdialog.js';
 		import { showPrompt } from './scripts/customdialog.js';
 		import { config } from './scripts/customdialog.js';
@@ -69,6 +70,9 @@
 			document.getElementById("input").value = "";
 			
 		});
+
+		const alertBtn = document.getElementById("alert");
+		alertBtn.addEventListener("click", showAlert);
 
 		const confirmBtn = document.getElementById("confirm");
 		confirmBtn.addEventListener("click", showConfirm);
