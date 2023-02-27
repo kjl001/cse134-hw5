@@ -62,7 +62,7 @@
 		const diagBox = document.getElementById("diagBox");
 		diagBox.addEventListener("close", () => {
 			/* take value from text box */
-			config.promptVal = DOMPurify.sanitize(txtInput.value);
+			config.promptVal = DOMPurify.sanitize(document.getElementById("input").value);
 			config.confirmVal = diagBox.returnValue;
 			if (document.getElementById("input").value == "") document.getElementById("confirmed").innerHTML = "Prompt result : " + config.confirmVal;
 			else document.getElementById("confirmed").innerHTML = "Prompt result : " + config.promptVal;
