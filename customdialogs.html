@@ -61,7 +61,8 @@
 
 		const diagBox = document.getElementById("diagBox");
 		diagBox.addEventListener("close", () => {
-			config.value = DOMPurify.sanitize(`${ diagBox.returnValue }`);
+			/* take value from text box */
+			config.value = DOMPurify.sanitize(document.getElementById("input").value);
 			showOutput();
 		});
 
