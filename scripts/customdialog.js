@@ -17,8 +17,8 @@ export function showPrompt() {
 }
 
 export let config = {
+	value: ""
 };
 export function showOutput() {
-	const safe = DOMPurify.sanitize(config.value);
-	document.getElementById("confirmed").innerHTML = "Prompt result : " + safe;
+	document.getElementById("confirmed").innerHTML = "Prompt result : " + config.value;
 }

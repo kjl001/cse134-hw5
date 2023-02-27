@@ -38,7 +38,7 @@
 			<input type="button" name="confirm" id="confirm" value="Confirm">
 			<input type="button" name="prompt" id="prompt" value="Prompt"> <br>
 			<hr>
-			<output name="confirmed" for="confirm" id="confirmed"></output>
+			<p id="confirmed"></p>
 		</form>
 
 		<dialog id="diagBox">
@@ -60,7 +60,7 @@
 
 		const diagBox = document.getElementById("diagBox");
 		diagBox.addEventListener("close", () => {
-			config.value = diagBox.returnValue;
+			config.value = DOMPurify.sanitize(diagBox.returnValue);
 			showOutput();
 		});
 
