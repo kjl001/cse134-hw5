@@ -42,7 +42,7 @@
 		</form>
 
 		<dialog id="diagBox">
-			<form>
+			<form method="dialog">
 				<!--Set for Alert, Confirm, Prompt-->
 				<label for="input" id="diagLabel"></label> <br>
 				<!--Alert: set hidden, Confirm: set hidden, Prompt: set text-->
@@ -61,7 +61,7 @@
 
 		const diagBox = document.getElementById("diagBox");
 		diagBox.addEventListener("close", () => {
-			config.value = DOMPurify.sanitize(diagBox.returnValue);
+			config.value = DOMPurify.sanitize(`${ diagBox.returnValue }`);
 			showOutput();
 		});
 
