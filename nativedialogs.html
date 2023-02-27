@@ -31,18 +31,19 @@
 		<h1>Simple Dialogs?</h1>
 
 		<form>
-			<input type="button" name="bt-alert" id="bt-alert" value="Alert">
-			<input type="button" name="bt-confirm" id="bt-confirm" value="Confirm">
+			<input type="button" name="alert" id="alert" value="Alert">
+			<input type="button" name="confirm" id="confirm" value="Confirm">
 			<input type="button" name="prompt" id="prompt" value="Prompt">
 			<input type="button" name="safe-prompt" id="safe-prompt" value="Safer Prompt">
-			<output name="confirmed" for="bt-confirm" id="confirmed"></output>
+			<output name="confirmed" for="confirm" id="confirmed"></output>
 		</form>
 	</main>
 
 	<script>
-		function showAlert() {
-			alert("Alert pressed!");
-		}
+		const alertBt = document.getElementById("alert");
+		alertBt.addEventListener("click", () => { alert("Alert pressed!") });
+		const confirm = document.getElementById("confirm");
+		confirm.addEventListener("click", isConfirmed);
 
 		function isConfirmed() {
 			let value = "The value returned by the confirmed method is : ";
@@ -54,12 +55,6 @@
 			}
 			document.getElementById("confirmed").innerText = value;
 		}
-
-		const alert = document.getElementById("bt-alert");
-		alert.addEventListener("click", showAlert);
-		const confirm = document.getElementById("bt-confirm");
-		confirm.addEventListener("click", isConfirmed);
-
 	</script>
 </body>
 
