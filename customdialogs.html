@@ -73,6 +73,7 @@
 
 		const promptBtn = document.getElementById("prompt");
 		promptBtn.addEventListener("click", showPrompt);
+		promptBtn.addEventListener("change", () => { document.getElementById("ok").value = DOMPurify.sanitize(txtInput.value); })
 	</script>
 </body>
 </html>
