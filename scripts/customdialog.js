@@ -20,5 +20,5 @@ export let config = {
 	value: ""
 };
 export function showOutput() {
-	document.getElementById("confirmed").innerHTML = "Prompt result : " + config.value;
+	document.getElementById("confirmed").value = "Prompt result : " + config.value;
 }
