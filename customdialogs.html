@@ -48,8 +48,8 @@
 				<!--Alert: set hidden, Confirm: set hidden, Prompt: set text-->
 				<input type="text" name="input" id="input"> <br>
 				<!--Cancel and Ok, show Cancel for Confirm and Prompt-->
-				<button id="cancel">Cancel</button>
-				<button id="ok">Ok</button>
+				<button id="cancel" value="Cancel">Cancel</button>
+				<button id="ok" value="Ok">Ok</button>
 			</form>
 		</dialog>
 	</main>
@@ -66,6 +66,9 @@
 			document.getElementById("input").value = "";
 			showOutput();
 		});
+
+		const confirmBtn = document.getElementById("confirm");
+		confirmBtn.addEventListener("click", showConfirm);
 
 		const promptBtn = document.getElementById("prompt");
 		promptBtn.addEventListener("click", showPrompt);
