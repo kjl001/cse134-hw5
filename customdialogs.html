@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Dialogs Page">
+	<meta name="keywords" content="HTML">
+	<meta name="author" content="Kevin Lee">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kevin Lee's Personal Portfolio</title>
+	<link href="images/favicon.ico" rel="icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="module" src="scripts/customdialog.js"></script>
+</head>
+
+<body>
+	<header>
+		<input id="menu-toggle" type="checkbox">
+		<label class="menu-button-container" for="menu-toggle">
+			<div class="menu-button"></div>
+		</label>
+		<ul id="navbar">
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./about.html">About Me</a></li>
+			<li><a href="./projects.html">Projects</a></li>
+			<li><a href="./resume.html">Resume</a></li>
+			<li><a href="./contact.html">Contact Me</a></li>
+			<li><a href="./nativedialogs.html">Simple Dialogs</a></li>
+			<li><a href="./customdialogs.html">Custom Dialogs</a></li>
+		</ul>
+	</header>
+
+	<main>
+		<h1>Simple Dialogs?</h1>
+
+		<form>
+			<input type="button" name="alert" id="alert" value="Alert">
+			<input type="button" name="confirm" id="confirm" value="Confirm">
+			<input type="button" name="prompt" id="prompt" value="Prompt"> <br>
+			<hr>
+			<output name="confirmed" for="confirm" id="confirmed"></output>
+		</form>
+
+		<dialog id="diagBox">
+			<form>
+				<!--Set for Alert, Confirm, Prompt-->
+				<label for="input" id="diagLabel"></label> <br>
+				<!--Alert: set hidden, Confirm: set hidden, Prompt: set text-->
+				<input type="text" name="input" id="input"> <br>
+				<!--Cancel and Ok, show Cancel for Confirm and Prompt-->
+				<input type="button" name="cancel" id="cancel" value="Cancel">
+				<input type="button" name="ok" id="ok" value="Ok">
+			</form>
+		</dialog>
+	</main>
+
+	<script type="module">
+		import { showPrompt } from './scripts/customdialog.js';
+		import { config } from './scripts/customdialog.js';
+
+		const diagBox = document.getElementById("diagBox");
+		diagBox.addEventListener("close", () => {
+			config.value = diagBox.returnValue;
+			showOutput();
+		});
+
+		const promptBtn = document.getElementById("prompt");
+		promptBtn.addEventListener("click", showPrompt);
+	</script>
+</body>
+</html>
