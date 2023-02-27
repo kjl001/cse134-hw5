@@ -75,6 +75,12 @@
 			}
 		}
 
+		function safeFunc() {
+			const value = "";
+			const output = getSafePrompt`Prompt result : ${value} User didn't enter anything`;
+			document.getElementById("confirmed").innerHTML = output;
+		}
+
 		const alertBt = document.getElementById("alert");
 		alertBt.addEventListener("click", () => { alert("Alert pressed!") });
 		const confirmBt = document.getElementById("confirm");
@@ -82,9 +88,7 @@
 		const promptBt = document.getElementById("prompt");
 		promptBt.addEventListener("click", getPrompt);
 		const safePromptBt = document.getElementById("safe-prompt");
-		const value = "";
-		const output = getSafePrompt`Prompt result : ${value} User didn't enter anything`;
-		document.getElementById("confirmed").innerHTML = output;
+		safePromptBt.addEventListener("click", safeFunc);
 	</script>
 </body>
 
