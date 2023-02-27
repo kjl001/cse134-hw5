@@ -67,7 +67,7 @@
 			let str0 = strings[0];
 			let str1 = strings[1];
 			let input = DOMPurify.sanitize(prompt("What is your name?"));
-			if (value != "") {
+			if (input != null) {
 				return `${str0}${input}`;
 			}
 			else {
