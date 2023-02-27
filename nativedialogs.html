@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kevin Lee's Personal Portfolio</title>
 	<link href="images/favicon.ico" rel="icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -52,10 +53,19 @@
 			document.getElementById("confirmed").innerText = value;
 		}
 
+		function getPrompt() {
+			let value = prompt("What is your name?");
+			if (value != null) {
+				document.getElementById("confirmed").innerHTML = "Prompt result : " + value;
+			}
+		}
+
 		const alertBt = document.getElementById("alert");
 		alertBt.addEventListener("click", () => { alert("Alert pressed!") });
 		const confirmBt = document.getElementById("confirm");
 		confirmBt.addEventListener("click", isConfirmed);
+		const promptBt = document.getElementById("prompt");
+		promptBt.addEventListener("click", getPrompt);
 	</script>
 </body>
 
