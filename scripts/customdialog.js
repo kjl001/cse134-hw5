@@ -1,5 +1,6 @@
 export let config = {
-	value: ""
+	promptVal: "",
+	confirmVal: ""
 };
 
 export function showConfirm() {
@@ -11,8 +12,6 @@ export function showConfirm() {
 	document.getElementById("ok").removeAttribute("hidden");
 
 	document.getElementById("diagBox").showModal();
-
-	document.getElementById("input").value = diagLabel.returnValue;
 }
 
 
@@ -27,8 +26,4 @@ export function showPrompt() {
 
 	const diag = document.getElementById("diagBox");
 	diag.showModal();
-}
-
-export function showOutput() {
-	document.getElementById("confirmed").innerHTML = "Prompt result : " + config.value;
 }

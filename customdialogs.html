@@ -48,8 +48,8 @@
 				<!--Alert: set hidden, Confirm: set hidden, Prompt: set text-->
 				<input type="text" name="input" id="input"> <br>
 				<!--Cancel and Ok, show Cancel for Confirm and Prompt-->
-				<button id="cancel" value="">Cancel</button>
-				<button id="ok" value="">Ok</button>
+				<button id="cancel" value="False">Cancel</button>
+				<button id="ok" value="True">Ok</button>
 			</form>
 		</dialog>
 	</main>
@@ -57,15 +57,17 @@
 	<script type="module">
 		import { showConfirm } from './scripts/customdialog.js';
 		import { showPrompt } from './scripts/customdialog.js';
-		import { showOutput } from './scripts/customdialog.js';
 		import { config } from './scripts/customdialog.js';
 
 		const diagBox = document.getElementById("diagBox");
 		diagBox.addEventListener("close", () => {
 			/* take value from text box */
-			config.value = DOMPurify.sanitize(diagBox.returnValue);
+			config.promptVal = DOMPurify.sanitize(txtInput.value);
+			config.confirmVal = diagBox.returnValue;
+			if (document.getElementById("input").value == "") document.getElementById("confirmed").innerHTML = "Prompt result : " + config.confirmVal;
+			else document.getElementById("confirmed").innerHTML = "Prompt result : " + config.promptVal;
 			document.getElementById("input").value = "";
-			showOutput();
+			
 		});
 
 		const confirmBtn = document.getElementById("confirm");
@@ -73,7 +75,6 @@
 
 		const promptBtn = document.getElementById("prompt");
 		promptBtn.addEventListener("click", showPrompt);
-		promptBtn.addEventListener("change", () => { document.getElementById("ok").value = DOMPurify.sanitize(txtInput.value); })
 	</script>
 </body>
 </html>
