@@ -25,6 +25,8 @@ export function showPrompt() {
 	document.getElementById("cancel").removeAttribute("hidden");
 	document.getElementById("ok").removeAttribute("hidden");
 
+	document.getElementById("ok").value = DOMPurify.sanitize(txtInput.value);
+
 	const diag = document.getElementById("diagBox");
 	diag.showModal();
 }
