@@ -18,6 +18,8 @@ export function showConfirm() {
 	document.getElementById("input").setAttribute("type", "hidden");
 
 	document.getElementById("cancel").removeAttribute("hidden");
+
+	document.getElementById("confirmed").innerHTML = "";
 	document.getElementById("confirmed").removeAttribute("hidden");
 
 	document.getElementById("diagBox").showModal();
@@ -31,6 +33,8 @@ export function showPrompt() {
 	txtInput.setAttribute("type", "text");
 
 	document.getElementById("cancel").removeAttribute("hidden");
+
+	document.getElementById("confirmed").innerHTML = "";
 	document.getElementById("confirmed").removeAttribute("hidden");
 
 	const diag = document.getElementById("diagBox");
