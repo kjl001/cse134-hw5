@@ -58,6 +58,21 @@
 			if (value != null) {
 				document.getElementById("confirmed").innerHTML = "Prompt result : " + value;
 			}
+			else {
+				document.getElementById("confirmed").innerHTML = "User didn't enter anything";
+			}
+		}
+
+		function getSafePrompt(strings, value) {
+			let str0 = strings[0];
+			let str1 = strings[1];
+			let input = DOMPurify.sanitize(prompt("What is your name?"));
+			if (value != null) {
+				return `${str0}${input}`;
+			}
+			else {
+				return `${str1}`;
+			}
 		}
 
 		const alertBt = document.getElementById("alert");
@@ -66,6 +81,9 @@
 		confirmBt.addEventListener("click", isConfirmed);
 		const promptBt = document.getElementById("prompt");
 		promptBt.addEventListener("click", getPrompt);
+		const safePromptBt = document.getElementById("safe-prompt");
+		const output = getSafePrompt`Prompt result : ${value} User didn't enter anything`;
+		document.getElementById("confirmed").innerHTML = output;
 	</script>
 </body>
 
