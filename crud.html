@@ -25,8 +25,8 @@
 		<button id="add-blog">Add Blog</button>
 	</main>
 
-	<template id="blog">
-		<section>
+	<template id="blog-template">
+		<section id="blog">
 			<!--Post Title-->
 			<h2></h2> <br>
 			<!--Post Date-->
@@ -42,7 +42,7 @@
 
 	<script>
 		const container = document.getElementById("container");
-		const template = document.getElementById("blog");
+		const template = document.getElementById("blog-template");
 
 		container.appendChild(template.content.cloneNode(true));
 
@@ -55,7 +55,7 @@
 		}
 
 		function addBlog(event) {
-			const template = document.getElementById("blog");
+			const template = document.getElementById("blog-template");
 			document.getElementById("container").appendChild(template.content.cloneNode(true));
 		}
 	</script>
