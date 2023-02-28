@@ -35,7 +35,7 @@
 		<!--Edit-->
 		<button onclick="editBlog">Edit</button>
 		<!--Delete-->
-		<button onclick="">Delete</button> <br>
+		<button onclick="(event) => { event.target.parent.remove(); }">Delete</button> <br>
 	</template>
 
 	<script>
@@ -54,7 +54,7 @@
 
 		function addBlog(event) {
 			const template = document.getElementById("blog");
-			document.getElementById("container").appendChild(template);
+			document.getElementById("container").appendChild(template.content.cloneNode(true));
 		}
 	</script>
 </body>
