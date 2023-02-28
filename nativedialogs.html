@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="description" content="Dialogs Page">
+	<meta name="description" content="Simple Dialogs Page">
 	<meta name="keywords" content="HTML">
 	<meta name="author" content="Kevin Lee">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +13,6 @@
 </head>
 
 <body>
-	<header>
-		<input id="menu-toggle" type="checkbox">
-		<label class="menu-button-container" for="menu-toggle">
-			<div class="menu-button"></div>
-		</label>
-		<ul id="navbar">
-			<li><a href="./index.html">Home</a></li>
-			<li><a href="./about.html">About Me</a></li>
-			<li><a href="./projects.html">Projects</a></li>
-			<li><a href="./resume.html">Resume</a></li>
-			<li><a href="./contact.html">Contact Me</a></li>
-			<li><a href="./nativedialogs.html">Simple Dialogs</a></li>
-			<li><a href="./customdialogs.html">Custom Dialogs</a></li>
-		</ul>
-	</header>
-
 	<main>
 		<h1>Simple Dialogs?</h1>
 
@@ -43,11 +27,8 @@
 	</main>
 
 	<script>
-		function clearText() {
-			document.getElementById("confirmed").innerHTML = "";
-		}
-
 		function isConfirmed() {
+			document.getElementById("confirmed").innerText = "";
 			let value = "The value returned by the confirmed method is : ";
 			if (confirm("Do you confirm this?")) {
 				value += "True";
@@ -59,6 +40,7 @@
 		}
 
 		function getPrompt() {
+			document.getElementById("confirmed").innerHTML = "";
 			let value = prompt("What is your name?");
 			if (value != null) {
 				document.getElementById("confirmed").innerHTML = "Prompt result : " + value;
@@ -81,25 +63,19 @@
 		}
 
 		function safeFunc() {
+			document.getElementById("confirmed").innerHTML = "";
 			const value = "";
 			const output = getSafePrompt`Prompt result : ${value} User didn't enter anything`;
 			document.getElementById("confirmed").innerHTML = output;
 		}
 
 		const alertBt = document.getElementById("alert");
-		alertBt.addEventListener("click", clearText);
 		alertBt.addEventListener("click", () => { alert("Alert pressed!") });
-
 		const confirmBt = document.getElementById("confirm");
-		confirmBt.addEventListener("click", clearText);
 		confirmBt.addEventListener("click", isConfirmed);
-
 		const promptBt = document.getElementById("prompt");
-		promptBt.addEventListener("click", clearText);
 		promptBt.addEventListener("click", getPrompt);
-
 		const safePromptBt = document.getElementById("safe-prompt");
-		safePromptBt.addEventListener("click", clearText);
 		safePromptBt.addEventListener("click", safeFunc);
 	</script>
 </body>

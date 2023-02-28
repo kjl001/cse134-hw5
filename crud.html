@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Custom Dialogs Page">
+	<meta name="keywords" content="HTML">
+	<meta name="author" content="Kevin Lee">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kevin Lee's Personal Portfolio</title>
+	<link href="images/favicon.ico" rel="icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="module" src="scripts/customdialog.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Summary of Blogs</h1>
+	</header>
+
+	<main>
+		<section id="container">
+
+		</section>
+		<button id="add-blog">Add Blog</button>
+	</main>
+
+	<template id="blog">
+		<!--Post Title-->
+		<h2></h2> <br>
+		<!--Post Date-->
+		<time></time> <br>
+		<!--Post Summary-->
+		<summary></summary> <br>
+		<!--Edit-->
+		<button onclick="editBlog">Edit</button>
+		<!--Delete-->
+		<button onclick="">Delete</button> <br>
+	</template>
+
+	<script>
+		const container = document.getElementById("container");
+		const template = document.getElementById("blog");
+
+		container.appendChild(template.content.cloneNode(true));
+
+		function editBlog() {
+			
+		}
+
+		function delBlog(event) {
+			event.target.parent.remove();
+		}
+
+		function addBlog(event) {
+			const template = document.getElementById("blog");
+			document.getElementById("container").appendChild(template);
+		}
+	</script>
+</body>
+
+</html>
