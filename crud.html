@@ -35,7 +35,7 @@
 		<!--Edit-->
 		<button onclick="editBlog">Edit</button>
 		<!--Delete-->
-		<button onclick="(event) => { event.target.parent.remove(); }">Delete</button> <br>
+		<button onclick="() => { this.parent.remove(); }">Delete</button> <br>
 	</template>
 
 	<script>
@@ -48,8 +48,8 @@
 			
 		}
 
-		function delBlog(event) {
-			event.target.parent.remove();
+		function delBlog(x) {
+			x.remove();
 		}
 
 		function addBlog(event) {
