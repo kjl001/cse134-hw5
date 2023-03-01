@@ -86,6 +86,24 @@
 		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
 		container.children[2].querySelector(".blog-id").id = 2;
 
+		for (let i = 3; i < localStorage.getItem("blogs").length; i++) {
+			const newBlog = {
+				title: localStorage.getItem("blogs")[i].title,
+				time: localStorage.getItem("blogs")[i].time,
+				summary: localStorage.getItem("blogs")[i].summary,
+				id: localStorage.getItem("blogs")[i].id
+			};
+			storage.push(newBlog);
+
+			const newTemp = document.getElementById("blog-template");
+			newTemp.content.querySelector("#blog").querySelector("#title").innerHTML = newBlog.title;
+			newTemp.content.querySelector("#blog").querySelector("#time").innerHTML = newBlog.time;
+			newTemp.content.querySelector("#blog").querySelector("#summary").innerHTML = newBlog.summary;
+			newTemp.content.querySelector("#blog").querySelector(".blog-id").id = newBlog.id;
+
+			container.appendChild(newTemp.content.clondeNode(true));
+		}
+
 		/* Edit button */
 		function editDiag(elem) {
 			const diagBox = document.getElementById("diagBox");
