@@ -66,15 +66,15 @@
 		container.appendChild(template.content.cloneNode(true));
 
 		container.children[0].querySelector("#title").innerHTML = "Started on Homework 4!";
-		container.children[0].querySelector("#time").innerHTML = "February 23, 2023";
+		container.children[0].querySelector("#time").innerHTML = "2023-02-23";
 		container.children[0].querySelector("#summary").innerHTML = "Started on my Homework 4 assignment for CSE 134B. I also have other projects too, however.";
 
 		container.children[1].querySelector("#title").innerHTML = "Finished up a CSE 123 Project";
-		container.children[1].querySelector("#time").innerHTML = "February 27, 2023";
+		container.children[1].querySelector("#time").innerHTML = "2023-02-27";
 		container.children[1].querySelector("#summary").innerHTML = "Finally finished PA3 for the class. Had to visit office hours for some questions.";
 
 		container.children[2].querySelector("#title").innerHTML = "Finished Homework 4!";
-		container.children[2].querySelector("#time").innerHTML = "March 1, 2023";
+		container.children[2].querySelector("#time").innerHTML = "2023-03-01";
 		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
 
 		const diagBox = document.getElementById("diagBox");
@@ -103,7 +103,7 @@
 				document.getElementById("summary-input").value = "";
 			}
 
-			else {
+			else if (diagBox.returnValue == "Save") {
 				const addTemp = document.getElementById("blog-template");
 				addTemp.content.querySelector("#blog").querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
 				addTemp.content.querySelector("#blog").querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
@@ -119,6 +119,9 @@
 
 			// How do I figure out which template to edit?
 			// Set ID for each? Set counter in global. Have each new creation refer to ID holding.
+			else {
+
+			}
 		});
 	</script>
 </body>
