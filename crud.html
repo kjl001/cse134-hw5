@@ -25,8 +25,8 @@
 		<button id="add-blog" onclick="addDiag()">Add Blog</button>
 	</main>
 
-	<dialog id="add-dialog">
-		<form id="add-form" method="dialog">
+	<dialog id="diagBox">
+		<form id="blog-form" method="dialog">
 			<!--Set Title for blog-->
 			<label for="title-input">Title: </label>
 			<input type="text" name="title-input" id="title-input" required> <br>
@@ -35,7 +35,7 @@
 			<input type="date" name="time-input" id="time-input" required> <br>
 			<!--Set Summary for blog-->
 			<label for="summary-input">Summary: </label>
-			<textarea name="summary-input" id="summary-input" form="add-form" rows="4" cols="30" required></textarea> <br>
+			<textarea name="summary-input" id="summary-input" form="blog-form" rows="4" cols="30" required></textarea> <br>
 			<!--Confirm or Cancel-->
 			<button id="add-cancel" value="Cancel">Cancel</button>
 			<button id="add-save" value="Save">Save</button>
@@ -51,7 +51,7 @@
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
 			<!--Edit-->
-			<button onclick="editBlog">Edit</button>
+			<button onclick="editDiag(this.parentElement)">Edit</button>
 			<!--Delete-->
 			<button onclick="this.parentElement.remove();">Delete</button> <br>
 		</section>
@@ -61,6 +61,7 @@
 		const container = document.getElementById("container");
 		const template = document.getElementById("blog-template");
 
+		/* Default blog posts */
 		container.appendChild(template.content.cloneNode(true));
 		container.appendChild(template.content.cloneNode(true));
 		container.appendChild(template.content.cloneNode(true));
@@ -77,11 +78,18 @@
 		container.children[2].querySelector("#time").innerHTML = "March 1, 2023";
 		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
 
-		function editBlog() {
-			
+		const diagBox = document.getElementById("diagBox");
+
+		/* Edit button */
+		function editDiag(elem) {
+			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").value;
+			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").value;
+			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").value;
+
+			diagBox.showModal();
 		}
 
-		const diagBox = document.getElementById("add-dialog");
+		/* Add Button */
 		function addDiag() {
 			diagBox.showModal();
 		}
@@ -106,12 +114,6 @@
 				container.appendChild(addTemp.content.cloneNode(true));
 			}
 		});
-
-		function addBlog() {
-
-
-			container.appendChild(template.content.cloneNode(true));
-		}
 	</script>
 </body>
 
