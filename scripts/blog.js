@@ -31,6 +31,7 @@ var newBlog3 = {
 storage.push(newBlog3);
 
 const localLength = localStorage.getItem("blogs").length;
+console.log(localLength);
 for (let i = 0; i < localLength; i++) {
 	container.appendChild(document.getElementById("blog-template").content.cloneNode(true));
 
