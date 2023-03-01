@@ -84,7 +84,7 @@
 	</script>
 
 	<script type="module">
-		import { index } from './scripts/blog.js';
+		import { config } from './scripts/blog.js';
 		import { storage } from './scripts/blog.js';
 
 		const container = document.getElementById("container");
@@ -127,15 +127,15 @@
 				addTemp.querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
 				addTemp.querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
 				addTemp.querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
-				addTemp.querySelector(".blog-id").id = index;
-				index = index + 1;
+				addTemp.querySelector(".blog-id").id = config.index;
+				config.index++;
 
 				/* Add to storage array */
 				const blogObj = {
 					title: addTemp.querySelector("#title").innerHTML,
 					time: addTemp.querySelector("#time").innerHTML,
 					summary: addTemp.querySelector("#summary").innerHTML,
-					blogIndex: addTemp.querySelector(".blog-id").id
+					index: addTemp.querySelector(".blog-id").id
 				};
 
 				storage.push(blogObj);
