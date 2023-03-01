@@ -8,13 +8,13 @@ const container = document.getElementById("container");
 
 const localLength = JSON.parse(localStorage.getItem("blogs")).length;
 console.log(localLength);
-for (let i = 3; i < localLength + 3; i++) {
+for (let i = ; i < localLength; i++) {
 	container.appendChild(document.getElementById("blog-template").content.cloneNode(true));
 
-	container.children[i].querySelector("#title").innerHTML = localStorage.getItem("blogs")[i].title;
-	container.children[i].querySelector("#time").innerHTML = localStorage.getItem("blogs")[i].time;
-	container.children[i].querySelector("#summary").innerHTML = localStorage.getItem("blogs")[i].summary;
-	container.children[i].querySelector(".blog-id").id = localStorage.getItem("blogs")[i].id;
+	container.children[i+3].querySelector("#title").innerHTML = localStorage.getItem("blogs")[i].title;
+	container.children[i+3].querySelector("#time").innerHTML = localStorage.getItem("blogs")[i].time;
+	container.children[i+3].querySelector("#summary").innerHTML = localStorage.getItem("blogs")[i].summary;
+	container.children[i+3].querySelector(".blog-id").id = localStorage.getItem("blogs")[i].id;
 }
 
 const diagBox = document.getElementById("diagBox");
