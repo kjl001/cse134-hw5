@@ -2,7 +2,7 @@ export let config = {
 	index: 3
 }
 
-export var storage = [];
+window.storage = [];
 
 const container = document.getElementById("container");
 
