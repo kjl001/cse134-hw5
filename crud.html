@@ -22,7 +22,7 @@
 		<section id="container">
 
 		</section>
-		<button id="add-blog">Add Blog</button>
+		<button id="add-blog" onclick="addDiag()">Add Blog</button>
 	</main>
 
 	<dialog id="diagBox">
@@ -53,18 +53,40 @@
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
 			<!--Add Edit and Delete-->
-			<button id="edit">Edit</button>
-			<button id="delete" onclick="this.parentElement.remove();">Delete</button>
+			<button id="edit" onclick="editDiag(this.parentElement)">Edit</button>
+			<button id="delete" onclick="this.parentElement.remove()">Delete</button>
 		</section>
 	</template>
+
+	<script>
+		/* Edit button */
+		function editDiag(elem) {
+			const diagBox = document.getElementById("diagBox");
+			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").innerHTML;
+			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").innerHTML;
+			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").innerHTML;
+
+			diagBox.querySelector("#blog-form").querySelector("#save").value = "Edit";
+
+			/* Set currIndex to be this index */
+			currIndex = elem.querySelector(".blog-id").innerHTML;
+
+			diagBox.showModal();
+		}
+
+		/* Add Button */
+		function addDiag() {
+			const diagBox = document.getElementById("diagBox");
+			diagBox.querySelector("#blog-form").querySelector("#save").value = "Save";
+			diagBox.showModal();
+		}
+	</script>
 
 	<script type="module">
 		import { index } from './scripts/blog.js';
 		import { currIndex } from './scripts/blog.js';
 		import { blog } from './scripts/blog.js';
 		import { storage } from './scripts/blog.js';
-		import { editDiag } from './scripts/blog.js';
-		import { addDiag } from './scripts/blog.js';
 
 		const container = document.getElementById("container");
 		const template = document.getElementById("blog-template");
@@ -77,20 +99,15 @@
 		container.children[0].querySelector("#title").innerHTML = "Started on Homework 4!";
 		container.children[0].querySelector("#time").innerHTML = "2023-02-23";
 		container.children[0].querySelector("#summary").innerHTML = "Started on my Homework 4 assignment for CSE 134B. I also have other projects too, however.";
-		container.children[0].querySelector("#edit").addEventListener("click", editDiag(container.children[0]));
 
 		container.children[1].querySelector("#title").innerHTML = "Finished up a CSE 123 Project";
 		container.children[1].querySelector("#time").innerHTML = "2023-02-27";
 		container.children[1].querySelector("#summary").innerHTML = "Finally finished PA3 for the class. Had to visit office hours for some questions.";
-		container.children[1].querySelector("#edit").addEventListener("click", editDiag(container.children[1]));
 
 		container.children[2].querySelector("#title").innerHTML = "Finished Homework 4!";
 		container.children[2].querySelector("#time").innerHTML = "2023-03-01";
 		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
-		container.children[2].querySelector("#edit").addEventListener("click", editDiag(container.children[2]));
 
-		/* Add adding functionality to button */
-		document.getElementById("add-blog").addEventListener("click", addDiag);
 
 		const diagBox = document.getElementById("diagBox");
 
@@ -110,7 +127,6 @@
 				addTemp.querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
 				addTemp.querySelector(".blog-id").id = index;
 				index++;
-				addTemp.querySelector("#edit").addEventListener("click", editDiag(addTemp));
 
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
