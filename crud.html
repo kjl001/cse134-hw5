@@ -85,7 +85,6 @@
 
 	<script type="module">
 		import { index } from './scripts/blog.js';
-		import { blog } from './scripts/blog.js';
 		import { storage } from './scripts/blog.js';
 
 		const container = document.getElementById("container");
@@ -131,6 +130,16 @@
 				addTemp.querySelector(".blog-id").id = index;
 				index++;
 
+				/* Add to storage array */
+				const blogObj = {
+					title: addTemp.querySelector("#title").innerHTML,
+					time: addTemp.querySelector("#time").innerHTML,
+					summary: addTemp.querySelector("#summary").innerHTML,
+					index: addTemp.querySelector(".blog-id").id
+				};
+
+				storage.push(blogObj);
+
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
 				document.getElementById("summary-input").value = "";
@@ -152,7 +161,9 @@
 				/* Find index of element to edit */
 				for (let i = 0; i < storage.length; i++) {
 					if (storage[i].index == currIndex) {
-
+						storage[i].title = editBlog.querySelector("#title").innerHTML;
+						storage[i].time = editBlog.querySelector("#time").innerHTML;
+						storage[i].summary = editBlog.querySelector("#summary").innerHTML;
 					}
 				}
 
