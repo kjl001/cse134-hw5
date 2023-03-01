@@ -27,6 +27,7 @@
 
 	<dialog id="diagBox">
 		<form id="blog-form" method="dialog">
+			<p class="diag-id" hidden></p>
 			<!--Set Title for blog-->
 			<label for="title-input">Title: </label>
 			<input type="text" name="title-input" id="title-input"> <br>
@@ -69,7 +70,7 @@
 			diagBox.querySelector("#blog-form").querySelector("#save").value = "Edit";
 
 			/* Set currIndex to be this index */
-			currIndex = elem.querySelector(".blog-id").innerHTML;
+			diagBox.querySelector(".diag-id").id = elem.querySelector(".blog-id").id;
 
 			diagBox.showModal();
 		}
@@ -84,7 +85,6 @@
 
 	<script type="module">
 		import { index } from './scripts/blog.js';
-		import { currIndex } from './scripts/blog.js';
 		import { blog } from './scripts/blog.js';
 		import { storage } from './scripts/blog.js';
 
@@ -149,6 +149,7 @@
 				editBlog.querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
 
 				/* Find index of element to edit */
+				const currIndex = diagBox.querySelector(".diag-id").id;
 				for (let i = 0; i < storage.length; i++) {
 					if (storage[i].index == currIndex) {
 
