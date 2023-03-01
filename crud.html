@@ -29,13 +29,13 @@
 		<form id="blog-form" method="dialog">
 			<!--Set Title for blog-->
 			<label for="title-input">Title: </label>
-			<input type="text" name="title-input" id="title-input" required> <br>
+			<input type="text" name="title-input" id="title-input"> <br>
 			<!--Set Date for blog-->
 			<label for="time-input">Date: </label>
-			<input type="date" name="time-input" id="time-input" required> <br>
+			<input type="date" name="time-input" id="time-input"> <br>
 			<!--Set Summary for blog-->
 			<label for="summary-input">Summary: </label>
-			<textarea name="summary-input" id="summary-input" form="blog-form" rows="4" cols="30" required></textarea> <br>
+			<textarea name="summary-input" id="summary-input" form="blog-form" rows="4" cols="30"></textarea> <br>
 			<!--Confirm or Cancel-->
 			<button id="add-cancel" value="Cancel">Cancel</button>
 			<button id="add-save" value="Save">Save</button>
@@ -51,7 +51,7 @@
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
 			<!--Edit-->
-			<button onclick="editDiag(this.parentElement)">Edit</button>
+			<button onclick="editDiag(this.parentElement.querySelector('#title').value, this.parentElement.querySelector('#time').value, this.parentElement.querySelector('#summary').value)">Edit</button>
 			<!--Delete-->
 			<button onclick="this.parentElement.remove();">Delete</button> <br>
 		</section>
@@ -81,10 +81,10 @@
 		const diagBox = document.getElementById("diagBox");
 
 		/* Edit button */
-		function editDiag(elem) {
-			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").value;
-			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").value;
-			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").value;
+		function editDiag(title, time, summary) {
+			diagBox.querySelector("#blog-form").querySelector("#title-input").value = title;
+			diagBox.querySelector("#blog-form").querySelector("#time-input").value = time;
+			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = summary;
 
 			diagBox.showModal();
 		}
