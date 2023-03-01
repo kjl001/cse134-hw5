@@ -10,7 +10,7 @@
 	<title>Kevin Lee's Personal Portfolio</title>
 	<link href="images/favicon.ico" rel="icon">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script type="module" src="scripts/customdialog.js"></script>
+	<script type="module" src="scripts/blog.js"></script>
 </head>
 
 <body>
@@ -44,6 +44,8 @@
 
 	<template id="blog-template">
 		<section id="blog">
+			<!--Blog ID-->
+			<p class="blog-id" hidden></p>
 			<!--Post Title-->
 			<h2 id="title"></h2>
 			<!--Post Date-->
@@ -56,7 +58,12 @@
 		</section>
 	</template>
 
-	<script>
+	<script type="module">
+		import { index } from './scripts/blog.js';
+		import { currIndex } from './scripts/blog.js';
+		import { blog } from './scripts/blog.js';
+		import { storage } from './scripts/blog.js';
+
 		const container = document.getElementById("container");
 		const template = document.getElementById("blog-template");
 
@@ -87,6 +94,9 @@
 
 			diagBox.querySelector("#blog-form").querySelector("#save").value = "Edit";
 
+			/* Set currIndex to be this index */
+			currIndex = elem.querySelector(".blog-id").innerHTML;
+
 			diagBox.showModal();
 		}
 
@@ -97,7 +107,7 @@
 		}
 
 		diagBox.addEventListener("close", () => {
-			if (diagBox.returnValue == "Cancel") {
+			if (diagBox.returnValue == "Cancel" || document.getElementById("title-input").value == "" || document.getElementById("time-input").value == "" || document.getElementById("summary-input").value == "") {
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
 				document.getElementById("summary-input").value = "";
@@ -108,7 +118,8 @@
 				addTemp.content.querySelector("#blog").querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
 				addTemp.content.querySelector("#blog").querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
 				addTemp.content.querySelector("#blog").querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
-
+				addtemp.content.querySelector("#blog").querySelector(".blog-id").id = index;
+				index++;
 
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
@@ -119,8 +130,23 @@
 
 			// How do I figure out which template to edit?
 			// Set ID for each? Set counter in global. Have each new creation refer to ID holding.
+			// Loop through array and find ID to match
 			else {
+				const editBlog = document.getElementById(currIndex).parentElement;
+				editBlog.querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
+				editBlog.querySelector("time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
+				editBlog.querySelector("summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
 
+				/* Find index of element to edit */
+				for (let i = 0; i < storage.length; i++) {
+					if (storage[i].index == currIndex) {
+
+					}
+				}
+
+				document.getElementById("title-input").value = "";
+				document.getElementById("time-input").value = "";
+				document.getElementById("summary-input").value = "";
 			}
 		});
 	</script>
