@@ -87,7 +87,7 @@
 		const diagBox = document.getElementById("diagBox");
 
 		/* Edit button */
-		function editDiag(elem) {
+		export function editDiag(elem) {
 			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").innerHTML;
 			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").innerHTML;
 			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").innerHTML;
@@ -101,7 +101,7 @@
 		}
 
 		/* Add Button */
-		function addDiag() {
+		export function addDiag() {
 			diagBox.querySelector("#blog-form").querySelector("#save").value = "Save";
 			diagBox.showModal();
 		}
