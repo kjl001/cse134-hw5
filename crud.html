@@ -55,7 +55,7 @@
 			<p id="summary"></p> <br>
 			<!--Add Edit and Delete-->
 			<button id="edit" onclick="editDiag(this.parentElement)">Edit</button>
-			<button id="delete" onclick="this.parentElement.remove()">Delete</button>
+			<button id="delete" onclick="delBlog(this.parentElement)">Delete</button>
 		</section>
 	</template>
 
@@ -106,6 +106,18 @@
 			const diagBox = document.getElementById("diagBox");
 			diagBox.querySelector("#blog-form").querySelector("#save").value = "Save";
 			diagBox.showModal();
+		}
+
+		function delBlog(elem) {
+			let index = 0;
+			while (index < storage.length) {
+				if (storage[index].index == elem.querySelector(".blog-id").id) {
+					storage.splice(index, 1);
+				}
+				index++;
+			}
+
+			elem.remove();
 		}
 	</script>
 </body>
