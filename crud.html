@@ -110,7 +110,7 @@
 
 		function delBlog(elem) {
 			let index = 0;
-			while (index < storage.length) {
+			while (index < localStorage.getItem("blogs").length) {
 				if (storage[index].index == elem.querySelector(".blog-id").id) {
 					storage.splice(index, 1);
 				}
