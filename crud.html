@@ -51,7 +51,7 @@
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
 			<!--Add Edit and Delete-->
-			<button id="edit">Edit</button>
+			<button id="edit" onclick="editDiag(this.parentElement)">Edit</button>
 			<button id="delete" onclick="this.parentElement.remove();">Delete</button>
 		</section>
 	</template>
@@ -84,6 +84,7 @@
 			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").value;
 			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").value;
 			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").value;
+
 			diagBox.querySelector("#blog-form").querySelector("#save").value = "Edit";
 
 			diagBox.showModal();
@@ -108,10 +109,6 @@
 				addTemp.content.querySelector("#blog").querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
 				addTemp.content.querySelector("#blog").querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
 
-				/* Add edit and delete buttons */
-				const newEditBtn = addTemp.content.querySelector("#blog").querySelector("#edit");
-				newEditBtn.addEventListener("click", editDiag(addTemp.content.querySelector("#blog")));
-				newEditBtn.innerText = "Edit";
 
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
