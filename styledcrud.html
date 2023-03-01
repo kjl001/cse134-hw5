@@ -3,15 +3,14 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="description" content="Styled CRUD Page">
+	<meta name="description" content="CRUD Page">
 	<meta name="keywords" content="HTML">
 	<meta name="author" content="Kevin Lee">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kevin Lee's Personal Portfolio</title>
 	<link href="images/favicon.ico" rel="icon">
-	<link rel="stylesheet" href="styles/styledcrud.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script type="module" src="scripts/styledblog.js"></script>
+	<script type="module" src="scripts/blog.js"></script>
 </head>
 
 <body>
@@ -30,13 +29,13 @@
 		<form id="blog-form" method="dialog">
 			<p class="diag-id" hidden></p>
 			<!--Set Title for blog-->
-			<label for="title-input">Title: </label> <br>
+			<label for="title-input">Title: </label>
 			<input type="text" name="title-input" id="title-input"> <br>
 			<!--Set Date for blog-->
-			<label for="time-input">Date: </label> <br>
+			<label for="time-input">Date: </label>
 			<input type="text" name="time-input" id="time-input"> <br>
 			<!--Set Summary for blog-->
-			<label for="summary-input">Summary: </label> <br>
+			<label for="summary-input">Summary: </label>
 			<textarea name="summary-input" id="summary-input" form="blog-form" rows="4" cols="30"></textarea> <br>
 			<!--Confirm or Cancel-->
 			<button id="cancel" value="Cancel">Cancel</button>
@@ -55,8 +54,8 @@
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
 			<!--Add Edit and Delete-->
-			<button id="edit" onclick="editDiag(this.parentElement)"><img src="./images/edit_icon.svg" alt="Edit Icon">Edit</button>
-			<button id="delete" onclick="delBlog(this.parentElement)"><img src="./images/trash_icon.svg" alt="Trash Icon">Delete</button>
+			<button id="edit" onclick="editDiag(this.parentElement)">Edit</button>
+			<button id="delete" onclick="delBlog(this.parentElement)">Delete</button>
 		</section>
 	</template>
 
@@ -122,7 +121,7 @@
 			elem.remove();
 
 			/* Show empty indicator */
-			if (storage.length == 0) {
+			if (container.children.length == 0) {
 				document.getElementById("empty").removeAttribute("hidden");
 				container.setAttribute("hidden", "hidden");
 			}
