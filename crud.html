@@ -123,25 +123,20 @@
 
 			/* When saving, create new blog */
 			else if (diagBox.returnValue == "Save") {
-				const addTemp = document.getElementById("blog-template").content.querySelector("#blog");
-				addTemp.querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
-				addTemp.querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
-				addTemp.querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
-				addTemp.querySelector(".blog-id").id = config.index;
+				const addTemp = document.getElementById("blog-template");
+				addTemp.content.querySelector("#blog").querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
+				addTemp.content.querySelector("#blog").querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
+				addTemp.content.querySelector("#blog").querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
+				addTemp.content.querySelector("#blog").querySelector(".blog-id").id = config.index;
 				config.index++;
 
 				/* Add to storage array */
-				let blogTitle = addTemp.querySelector("#title").innerHTML;
-				let blogTime = addTemp.querySelector("#time").innerHTML;
-				let blogSumm = addTemp.querySelector("#summary").innerHTML;
-				let blogInd = addTemp.querySelector(".blog-id").id;
 				const blogObj = {
-					title: blogTitle,
-					time: blogTime,
-					summary: blogSumm,
-					index: blogInd
+					title: addTemp.content.querySelector("#blog").querySelector("#title").innerHTML,
+					time: addTemp.content.querySelector("#blog").querySelector("#time").innerHTML,
+					summary: addTemp.content.querySelector("#blog").querySelector("#summary").innerHTML,
+					index: addTemp.content.querySelector("#blog").querySelector(".blog-id").id
 				};
-
 				storage.push(blogObj);
 
 				document.getElementById("title-input").value = "";
