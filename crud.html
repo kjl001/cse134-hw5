@@ -22,7 +22,7 @@
 		<section id="container">
 
 		</section>
-		<button id="add-blog" onclick="addDiag()">Add Blog</button>
+		<button id="add-blog">Add Blog</button>
 	</main>
 
 	<dialog id="diagBox">
@@ -53,7 +53,7 @@
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
 			<!--Add Edit and Delete-->
-			<button id="edit" onclick="editDiag(this.parentElement)">Edit</button>
+			<button id="edit">Edit</button>
 			<button id="delete" onclick="this.parentElement.remove();">Delete</button>
 		</section>
 	</template>
@@ -63,6 +63,8 @@
 		import { currIndex } from './scripts/blog.js';
 		import { blog } from './scripts/blog.js';
 		import { storage } from './scripts/blog.js';
+		import { editDiag } from './scripts/blog.js';
+		import { addDiag } from './scripts/blog.js';
 
 		const container = document.getElementById("container");
 		const template = document.getElementById("blog-template");
@@ -84,42 +86,28 @@
 		container.children[2].querySelector("#time").innerHTML = "2023-03-01";
 		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
 
+		/* Add adding functionality to button */
+		document.getElementById("add-blog").addEventListener("click", addDiag);
+
 		const diagBox = document.getElementById("diagBox");
 
-		/* Edit button */
-		export function editDiag(elem) {
-			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").innerHTML;
-			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").innerHTML;
-			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").innerHTML;
-
-			diagBox.querySelector("#blog-form").querySelector("#save").value = "Edit";
-
-			/* Set currIndex to be this index */
-			currIndex = elem.querySelector(".blog-id").innerHTML;
-
-			diagBox.showModal();
-		}
-
-		/* Add Button */
-		export function addDiag() {
-			diagBox.querySelector("#blog-form").querySelector("#save").value = "Save";
-			diagBox.showModal();
-		}
-
 		diagBox.addEventListener("close", () => {
+			/* When cancel or no input, just exit */
 			if (diagBox.returnValue == "Cancel" || document.getElementById("title-input").value == "" || document.getElementById("time-input").value == "" || document.getElementById("summary-input").value == "") {
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
 				document.getElementById("summary-input").value = "";
 			}
 
+			/* When saving, create new blog */
 			else if (diagBox.returnValue == "Save") {
-				const addTemp = document.getElementById("blog-template");
-				addTemp.content.querySelector("#blog").querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
-				addTemp.content.querySelector("#blog").querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
-				addTemp.content.querySelector("#blog").querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
-				addtemp.content.querySelector("#blog").querySelector(".blog-id").id = index;
+				const addTemp = document.getElementById("blog-template").content.querySelector("#blog");
+				addTemp.querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
+				addTemp.querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
+				addTemp.querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
+				addtemp.querySelector(".blog-id").id = index;
 				index++;
+				addTemp.querySelector("#edit").addEventListener("click", editDiag(addTemp));
 
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
@@ -131,6 +119,7 @@
 			// How do I figure out which template to edit?
 			// Set ID for each? Set counter in global. Have each new creation refer to ID holding.
 			// Loop through array and find ID to match
+			/* Editing current blog */
 			else {
 				const editBlog = document.getElementById(currIndex).parentElement;
 				editBlog.querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
