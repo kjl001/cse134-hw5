@@ -50,6 +50,9 @@
 			<time id="time"></time> <br>
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
+			<!--Add Edit and Delete-->
+			<button id="edit">Edit</button>
+			<button id="delete">Delete</button>
 		</section>
 	</template>
 
@@ -106,15 +109,12 @@
 				addTemp.content.querySelector("#blog").querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
 
 				/* Add edit and delete buttons */
-				const newEditBtn = document.createElement("button");
-				addTemp.content.querySelector("#blog").appendChild(newEditBtn);
+				const newEditBtn = addTemp.content.querySelector("#blog").querySelector("edit");
 				newEditBtn.addEventListener("click", editDiag(addTemp.content.querySelector("#blog")));
 				newEditBtn.innerText = "Edit";
 
-				const newSaveBtn = document.createElement("button");
-				addTemp.content.querySelector("#blog").appendChild(newSaveBtn);
-				newSaveBtn.addEventListener("click", () => { this.parentElement.remove(); });
-				newSaveBtn.innerText = "Save";
+				const newDelBtn = addTemp.content.querySelector("#blog").querySelector("#delete");
+				newDelBtn.addEventListener("click", () => { newDelBtn.parentElement.remove(); });
 
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
