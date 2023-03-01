@@ -28,11 +28,11 @@
 	<template id="blog-template">
 		<section id="blog">
 			<!--Post Title-->
-			<h2></h2> <br>
+			<h2 id="title"></h2> <br>
 			<!--Post Date-->
-			<time id="blog-time"></time> <br>
+			<time id="time"></time> <br>
 			<!--Post Summary-->
-			<p></p> <br>
+			<p id="summary"></p> <br>
 			<!--Edit-->
 			<button onclick="editBlog">Edit</button>
 			<!--Delete-->
@@ -43,15 +43,27 @@
 	<script>
 		const container = document.getElementById("container");
 		const template = document.getElementById("blog-template");
+		const template2 = document.getElementById("blog-template");
+		const template3 = document.getElementById("blog-template");
+
+		template.getElementById("title").innerHTML = "Started on Homework 4!";
+		template.getElementById("time").innerHTML = "February 23, 2023";
+		template.getElementById("summary").innerHTML = "Started on my Homework 4 assignment for CSE 134B. I also have other projects too, however.";
+
+		template2.getElementById("title").innerHTML = "Finished up a CSE 123 Project";
+		template2.getElemenyById("time").innerHTML = "February 27, 2023";
+		template2.getElementById("summary").innerHTML = "Finally finished PA3 for the class. Had to visit office hours for some questions.";
+
+		template3.getElementById("title").innerHTML = "Finished Homework 4!";
+		template3.getElemenyById("time").innerHTML = "March 1, 2023";
+		template3.getElementById("summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
 
 		container.appendChild(template.content.cloneNode(true));
+		container.appendChild(template2.content.cloneNode(true));
+		container.appendChild(template3.content.cloneNode(true));
 
 		function editBlog() {
 			
-		}
-
-		function delBlog(x) {
-			x.remove();
 		}
 
 		function addBlog(event) {
