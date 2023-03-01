@@ -130,14 +130,16 @@
 				addTemp.querySelector(".blog-id").id = config.index;
 				config.index++;
 
-				container.appendChild(addTemp.content.cloneNode(true));
-
 				/* Add to storage array */
+				let blogTitle = addTemp.querySelector("#title").innerHTML;
+				let blogTime = addTemp.querySelector("#time").innerHTML;
+				let blogSumm = addTemp.querySelector("#summary").innerHTML;
+				let blogInd = addTemp.querySelector(".blog-id").id;
 				const blogObj = {
-					title: addTemp.querySelector("#title").innerHTML,
-					time: addTemp.querySelector("#time").innerHTML,
-					summary: addTemp.querySelector("#summary").innerHTML,
-					index: addTemp.querySelector(".blog-id").id
+					title: blogTitle,
+					time: blogTime,
+					summary: blogSumm,
+					index: blogInd
 				};
 
 				storage.push(blogObj);
@@ -145,6 +147,8 @@
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
 				document.getElementById("summary-input").value = "";
+
+				container.appendChild(addTemp.content.cloneNode(true));
 			}
 
 			// How do I figure out which template to edit?
