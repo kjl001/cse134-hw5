@@ -51,7 +51,7 @@
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
 			<!--Edit-->
-			<button onclick="editDiag(this.parentElement.querySelector('#title').value, this.parentElement.querySelector('#time').value, this.parentElement.querySelector('#summary').value)">Edit</button>
+			<button onclick="editDiag(this)">Edit</button>
 			<!--Delete-->
 			<button onclick="this.parentElement.remove();">Delete</button> <br>
 		</section>
@@ -81,10 +81,10 @@
 		const diagBox = document.getElementById("diagBox");
 
 		/* Edit button */
-		function editDiag(title, time, summary) {
-			diagBox.querySelector("#blog-form").querySelector("#title-input").value = title;
-			diagBox.querySelector("#blog-form").querySelector("#time-input").value = time;
-			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = summary;
+		function editDiag(elem) {
+			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.parentElement.querySelector("title").value;
+			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.parentElement.querySelector("time").value;
+			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.parentElement.querySelector("summary").value;
 
 			diagBox.showModal();
 		}
