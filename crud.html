@@ -46,6 +46,10 @@
 		const template2 = document.getElementById("blog-template");
 		const template3 = document.getElementById("blog-template");
 
+		container.appendChild(template.content.cloneNode(true));
+		container.appendChild(template2.content.cloneNode(true));
+		container.appendChild(template3.content.cloneNode(true));
+
 		template.querySelector("#title").innerHTML = "Started on Homework 4!";
 		template.querySelector("#time").innerHTML = "February 23, 2023";
 		template.querySelector("#summary").innerHTML = "Started on my Homework 4 assignment for CSE 134B. I also have other projects too, however.";
@@ -57,10 +61,6 @@
 		template3.querySelector("#title").innerHTML = "Finished Homework 4!";
 		template3.querySelector("#time").innerHTML = "March 1, 2023";
 		template3.querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
-
-		container.appendChild(template.content.cloneNode(true));
-		container.appendChild(template2.content.cloneNode(true));
-		container.appendChild(template3.content.cloneNode(true));
 
 		function editBlog() {
 			
