@@ -37,8 +37,8 @@
 			<label for="summary-input">Summary: </label>
 			<textarea name="summary-input" id="summary-input" form="blog-form" rows="4" cols="30"></textarea> <br>
 			<!--Confirm or Cancel-->
-			<button id="add-cancel" value="Cancel">Cancel</button>
-			<button id="add-save" value="Save">Save</button>
+			<button id="cancel" value="Cancel">Cancel</button>
+			<button id="save" value="Save">Save</button>
 		</form>
 	</dialog>
 
@@ -50,10 +50,6 @@
 			<time id="time"></time> <br>
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
-			<!--Edit-->
-			<button onclick="editDiag(this)">Edit</button>
-			<!--Delete-->
-			<button onclick="this.parentElement.remove();">Delete</button> <br>
 		</section>
 	</template>
 
@@ -85,12 +81,14 @@
 			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.parentElement.querySelector("#title").value;
 			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.parentElement.querySelector("#time").value;
 			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.parentElement.querySelector("#summary").value;
+			diagBox.querySelector("#blog-form").querySelector("#save").value = "Edit";
 
 			diagBox.showModal();
 		}
 
 		/* Add Button */
 		function addDiag() {
+			diagBox.querySelector("#blog-form").querySelector("#save").value = "Save";
 			diagBox.showModal();
 		}
 
@@ -101,17 +99,33 @@
 				document.getElementById("summary-input").value = "";
 			}
 
-			else {
+			else if (diagBox.returnValue == "Save") {
 				const addTemp = document.getElementById("blog-template");
 				addTemp.content.querySelector("#blog").querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
 				addTemp.content.querySelector("#blog").querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
 				addTemp.content.querySelector("#blog").querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
+
+				/* Add edit and delete buttons */
+				const newEditBtn = document.createElement("button");
+				addTemp.content.querySelector("#blog").appendChild(newEditBtn);
+				newEditBtn.addEventListener("click", editDiag(this));
+				newEditBtn.innerText = "Edit";
+
+				const newSaveBtn = document.createElement("button");
+				addTemp.content.querySelector("#blog").appendChild(newSaveBtn);
+				newSaveBtn.addEventListener("click", () => { this.parentElement.remove(); });
 
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
 				document.getElementById("summary-input").value = "";
 
 				container.appendChild(addTemp.content.cloneNode(true));
+			}
+
+			// How do I figure out which template to edit?
+			// Set ID for each?
+			else {
+				
 			}
 		});
 	</script>
