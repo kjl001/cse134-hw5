@@ -93,7 +93,7 @@
 				summary: localStorage.getItem("blogs")[i].summary,
 				id: localStorage.getItem("blogs")[i].id
 			};
-			storage.push(newBlog);
+			window.storage.push(newBlog);
 
 			const newTemp = document.getElementById("blog-template");
 			newTemp.content.querySelector("#blog").querySelector("#title").innerHTML = newBlog.title;
