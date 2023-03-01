@@ -32,6 +32,11 @@ main {
 	overflow-wrap: break-word;
 }
 
+#blog-form > * {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 #add-blog {
 	width: 30%;
 	align-self: center;
@@ -41,7 +46,16 @@ main {
 	font-style: italic;
 }
 
-#delete img {
+#delete img, #edit img {
 	width: 1em;
 	height: 1em;
 }
+
+#delete, #edit {
+	background-color: lightblue;
+	border-radius: 3px;
+}
+
+	#delete:hover, #edit:hover {
+		background-color: #789ba7;
+	}

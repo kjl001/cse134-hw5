@@ -30,13 +30,13 @@
 		<form id="blog-form" method="dialog">
 			<p class="diag-id" hidden></p>
 			<!--Set Title for blog-->
-			<label for="title-input">Title: </label>
+			<label for="title-input">Title: </label> <br>
 			<input type="text" name="title-input" id="title-input"> <br>
 			<!--Set Date for blog-->
-			<label for="time-input">Date: </label>
+			<label for="time-input">Date: </label> <br>
 			<input type="text" name="time-input" id="time-input"> <br>
 			<!--Set Summary for blog-->
-			<label for="summary-input">Summary: </label>
+			<label for="summary-input">Summary: </label> <br>
 			<textarea name="summary-input" id="summary-input" form="blog-form" rows="4" cols="30"></textarea> <br>
 			<!--Confirm or Cancel-->
 			<button id="cancel" value="Cancel">Cancel</button>
@@ -55,7 +55,7 @@
 			<!--Post Summary-->
 			<p id="summary"></p> <br>
 			<!--Add Edit and Delete-->
-			<button id="edit" onclick="editDiag(this.parentElement)">Edit</button>
+			<button id="edit" onclick="editDiag(this.parentElement)"><img src="./images/edit_icon.svg" alt="Edit Icon">Edit</button>
 			<button id="delete" onclick="delBlog(this.parentElement)"><img src="./images/trash_icon.svg" alt="Trash Icon">Delete</button>
 		</section>
 	</template>
