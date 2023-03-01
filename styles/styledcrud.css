@@ -6,12 +6,17 @@
 
 h1 {
 	text-align: center;
+	text-decoration: underline;
 }
 
 main {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+main > p {
+	text-align: center;
 }
 
 #blog, #diagBox {
@@ -51,11 +56,11 @@ main {
 	height: 1em;
 }
 
-#delete, #edit {
+#delete, #edit, #add-blog {
 	background-color: lightblue;
 	border-radius: 3px;
 }
 
-	#delete:hover, #edit:hover {
+	#delete:hover, #edit:hover, #add-blog:hover {
 		background-color: #789ba7;
 	}
