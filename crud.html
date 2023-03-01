@@ -78,9 +78,9 @@
 
 		/* Edit button */
 		function editDiag(elem) {
-			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.parentElement.querySelector("#title").value;
-			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.parentElement.querySelector("#time").value;
-			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.parentElement.querySelector("#summary").value;
+			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").value;
+			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").value;
+			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").value;
 			diagBox.querySelector("#blog-form").querySelector("#save").value = "Edit";
 
 			diagBox.showModal();
@@ -108,7 +108,7 @@
 				/* Add edit and delete buttons */
 				const newEditBtn = document.createElement("button");
 				addTemp.content.querySelector("#blog").appendChild(newEditBtn);
-				newEditBtn.addEventListener("click", editDiag(this));
+				newEditBtn.addEventListener("click", editDiag(addTemp.content.querySelector("#blog")));
 				newEditBtn.innerText = "Edit";
 
 				const newSaveBtn = document.createElement("button");
@@ -123,7 +123,7 @@
 			}
 
 			// How do I figure out which template to edit?
-			// Set ID for each?
+			// Set ID for each? Set counter in global. Have each new creation refer to ID holding.
 			else {
 				
 			}
