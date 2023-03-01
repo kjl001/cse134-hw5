@@ -82,9 +82,9 @@
 
 		/* Edit button */
 		function editDiag(elem) {
-			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.parentElement.querySelector("title").value;
-			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.parentElement.querySelector("time").value;
-			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.parentElement.querySelector("summary").value;
+			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.parentElement.querySelector("#title").value;
+			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.parentElement.querySelector("#time").value;
+			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.parentElement.querySelector("#summary").value;
 
 			diagBox.showModal();
 		}
