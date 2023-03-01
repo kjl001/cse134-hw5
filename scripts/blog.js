@@ -1,5 +1,5 @@
-export let index = 0;
-export let currIndex = 0;
+export var index = 0;
+export var currIndex = 0;
 
 export let blog = {
 	title: "",
@@ -8,4 +8,4 @@ export let blog = {
 	index: 0
 };
 
-export let storage = [];
+export var storage = [];
