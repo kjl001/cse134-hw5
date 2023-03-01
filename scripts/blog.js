@@ -5,7 +5,6 @@ export let config = {
 export var storage = [];
 
 const container = document.getElementById("container");
-const template = document.getElementById("blog-template");
 
 var newBlog = {
 	title: "Started on Homework 4!",
