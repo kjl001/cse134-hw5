@@ -81,9 +81,9 @@
 
 		/* Edit button */
 		function editDiag(elem) {
-			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").value;
-			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").value;
-			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").value;
+			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").innerHTML;
+			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").innerHTML;
+			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").innerHTML;
 
 			diagBox.querySelector("#blog-form").querySelector("#save").value = "Edit";
 
