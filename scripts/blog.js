@@ -8,7 +8,7 @@ const container = document.getElementById("container");
 
 const localLength = JSON.parse(localStorage.getItem("blogs")).length;
 console.log(localLength);
-for (let i = 0; i < localLength; i++) {
+for (let i = 3; i < localLength + 3; i++) {
 	container.appendChild(document.getElementById("blog-template").content.cloneNode(true));
 
 	container.children[i].querySelector("#title").innerHTML = localStorage.getItem("blogs")[i].title;
