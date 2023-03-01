@@ -86,7 +86,8 @@
 		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
 		container.children[2].querySelector(".blog-id").id = 2;
 
-		for (let i = 3; i < localStorage.getItem("blogs").length; i++) {
+		const localLength = localStorage.getItem("blogs").length;
+		for (let i = 3; i < localLength; i++) {
 			const newBlog = {
 				title: localStorage.getItem("blogs")[i].title,
 				time: localStorage.getItem("blogs")[i].time,
