@@ -143,13 +143,13 @@
 			// Loop through array and find ID to match
 			/* Editing current blog */
 			else {
+				const currIndex = diagBox.querySelector(".diag-id").id;
 				const editBlog = document.getElementById(currIndex).parentElement;
 				editBlog.querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
 				editBlog.querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
 				editBlog.querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
 
 				/* Find index of element to edit */
-				const currIndex = diagBox.querySelector(".diag-id").id;
 				for (let i = 0; i < storage.length; i++) {
 					if (storage[i].index == currIndex) {
 
