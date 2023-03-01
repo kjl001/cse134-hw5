@@ -30,6 +30,17 @@ var newBlog3 = {
 };
 storage.push(newBlog3);
 
+const localLength = localStorage.getItem("blogs").length;
+for (let i = 0; i < localLength; i++) {
+	container.appendChild(document.getElementById("blog-template").content.cloneNode(true));
+
+	container.children[i].querySelector("#title").innerHTML = localStorage.getItem("blogs")[i].title;
+	container.children[i].querySelector("#time").innerHTML = localStorage.getItem("blogs")[i].time;
+	container.children[i].querySelector("#summary").innerHTML = localStorage.getItem("blogs")[i].summary;
+	container.children[i].querySelector(".blog-id").id = localStorage.getItem("blogs")[i].id;
+}
+
+
 /* Set to local storage */
 localStorage.setItem("blogs", JSON.stringify(storage));
 
