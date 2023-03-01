@@ -130,6 +130,8 @@
 				addTemp.querySelector(".blog-id").id = config.index;
 				config.index++;
 
+				container.appendChild(addTemp.content.cloneNode(true));
+
 				/* Add to storage array */
 				const blogObj = {
 					title: addTemp.querySelector("#title").innerHTML,
@@ -143,8 +145,6 @@
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
 				document.getElementById("summary-input").value = "";
-
-				container.appendChild(addTemp.content.cloneNode(true));
 			}
 
 			// How do I figure out which template to edit?
