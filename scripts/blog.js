@@ -72,7 +72,7 @@ diagBox.addEventListener("close", () => {
 		container.appendChild(addTemp.content.cloneNode(true));
 
 		/* Remove empty indicator */
-		document.getElementById("#empty").setAttribute("hidden", "hidden");
+		document.getElementById("empty").setAttribute("hidden", "hidden");
 	}
 
 	/* Editing current blog */
