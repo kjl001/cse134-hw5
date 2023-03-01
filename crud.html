@@ -22,7 +22,7 @@
 		<section id="container">
 
 		</section>
-		<button id="add-blog" onclick="addBlog">Add Blog</button>
+		<button id="add-blog" onclick="addBlog()">Add Blog</button>
 	</main>
 
 	<template id="blog-template">
@@ -65,8 +65,7 @@
 		}
 
 		function addBlog() {
-			const template = document.getElementById("blog-template");
-			document.getElementById("container").appendChild(template.content.cloneNode(true));
+			container.appendChild(template.content.cloneNode(true));
 		}
 	</script>
 </body>
