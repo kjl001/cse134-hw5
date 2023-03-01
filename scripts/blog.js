@@ -4,7 +4,7 @@ export let blog = {
 	title: "",
 	time: "",
 	summary: "",
-	index: 0
+	blogIndex: 0
 };
 
 export var storage = [];

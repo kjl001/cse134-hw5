@@ -128,14 +128,14 @@
 				addTemp.querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
 				addTemp.querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
 				addTemp.querySelector(".blog-id").id = index;
-				index++;
+				index = index + 1;
 
 				/* Add to storage array */
 				const blogObj = {
 					title: addTemp.querySelector("#title").innerHTML,
 					time: addTemp.querySelector("#time").innerHTML,
 					summary: addTemp.querySelector("#summary").innerHTML,
-					index: addTemp.querySelector(".blog-id").id
+					blogIndex: addTemp.querySelector(".blog-id").id
 				};
 
 				storage.push(blogObj);
