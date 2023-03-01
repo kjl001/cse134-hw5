@@ -77,17 +77,17 @@
 		container.children[0].querySelector("#title").innerHTML = "Started on Homework 4!";
 		container.children[0].querySelector("#time").innerHTML = "2023-02-23";
 		container.children[0].querySelector("#summary").innerHTML = "Started on my Homework 4 assignment for CSE 134B. I also have other projects too, however.";
-		container.children[0].querySelector("#edit").addEventListener("click", editDiag(addTemp));
+		container.children[0].querySelector("#edit").addEventListener("click", editDiag(container.children[0]));
 
 		container.children[1].querySelector("#title").innerHTML = "Finished up a CSE 123 Project";
 		container.children[1].querySelector("#time").innerHTML = "2023-02-27";
 		container.children[1].querySelector("#summary").innerHTML = "Finally finished PA3 for the class. Had to visit office hours for some questions.";
-		container.children[1].querySelector("#edit").addEventListener("click", editDiag(addTemp));
+		container.children[1].querySelector("#edit").addEventListener("click", editDiag(container.children[1]));
 
 		container.children[2].querySelector("#title").innerHTML = "Finished Homework 4!";
 		container.children[2].querySelector("#time").innerHTML = "2023-03-01";
 		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
-		container.children[2].querySelector("#edit").addEventListener("click", editDiag(addTemp));
+		container.children[2].querySelector("#edit").addEventListener("click", editDiag(container.children[2]));
 
 		/* Add adding functionality to button */
 		document.getElementById("add-blog").addEventListener("click", addDiag);
