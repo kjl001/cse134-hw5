@@ -6,32 +6,6 @@ window.storage = [];
 
 const container = document.getElementById("container");
 
-if (container.children.length == 0) {
-	var newBlog = {
-		title: "Started on Homework 4!",
-		time: "February 23, 2023",
-		summary: "Started on my Homework 4 assignment for CSE 134B. I also have other projects too, however.",
-		index: 0
-	};
-	storage.push(newBlog);
-
-	var newBlog2 = {
-		title: "Finished up a CSE 123 Project",
-		time: "February 27, 2023",
-		summary: "Finally finished PA3 for the class. Had to visit office hours for some questions.",
-		index: 1
-	};
-	storage.push(newBlog2);
-
-	var newBlog3 = {
-		title: "Finished Homework 4!",
-		time: "March 1, 2023",
-		summary: "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.",
-		index: 2
-	};
-	storage.push(newBlog3);
-}
-
 const localLength = JSON.parse(localStorage.getItem("blogs")).length;
 console.log(localLength);
 for (let i = 0; i < localLength; i++) {
