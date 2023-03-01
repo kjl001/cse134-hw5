@@ -36,3 +36,12 @@ main {
 	width: 30%;
 	align-self: center;
 }
+
+#time {
+	font-style: italic;
+}
+
+#delete img {
+	width: 1em;
+	height: 1em;
+}
