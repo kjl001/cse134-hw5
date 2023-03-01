@@ -99,7 +99,7 @@
 				document.getElementById("summary-input").value = "";
 			}
 
-			else if (diagBox.returnValue == "Save") {
+			else {
 				const addTemp = document.getElementById("blog-template");
 				addTemp.content.querySelector("#blog").querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
 				addTemp.content.querySelector("#blog").querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
@@ -114,6 +114,7 @@
 				const newSaveBtn = document.createElement("button");
 				addTemp.content.querySelector("#blog").appendChild(newSaveBtn);
 				newSaveBtn.addEventListener("click", () => { this.parentElement.remove(); });
+				newSaveBtn.innerText = "Save";
 
 				document.getElementById("title-input").value = "";
 				document.getElementById("time-input").value = "";
@@ -124,9 +125,6 @@
 
 			// How do I figure out which template to edit?
 			// Set ID for each? Set counter in global. Have each new creation refer to ID holding.
-			else {
-				
-			}
 		});
 	</script>
 </body>
