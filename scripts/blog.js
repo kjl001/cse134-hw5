@@ -70,7 +70,9 @@ diagBox.addEventListener("close", () => {
 		document.getElementById("summary-input").value = "";
 
 		container.appendChild(addTemp.content.cloneNode(true));
-		container.querySelector("#empty").setAttribute("hidden", "hidden");
+
+		/* Remove empty indicator */
+		document.getElementById("#empty").setAttribute("hidden", "hidden");
 	}
 
 	/* Editing current blog */

@@ -20,8 +20,8 @@
 
 	<main>
 		<section id="container">
-			<p id="empty" hidden>No blogs currently listed</p>
 		</section> <br>
+		<p id="empty" hidden>No blogs currently listed</p>
 		<button id="add-blog" onclick="addDiag()">Add Blog</button>
 	</main>
 
@@ -120,8 +120,9 @@
 
 			elem.remove();
 
+			/* Show empty indicator */
 			if (storage.length == 0) {
-				container.querySelector("#empty").removeAttribute("hidden");
+				document.getElementById("#empty").removeAttribute("hidden");
 			}
 		}
 	</script>
