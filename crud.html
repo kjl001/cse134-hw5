@@ -20,7 +20,7 @@
 
 	<main>
 		<section id="container">
-
+			<p id="empty" hidden>No blogs currently listed</p>
 		</section> <br>
 		<button id="add-blog" onclick="addDiag()">Add Blog</button>
 	</main>
@@ -119,6 +119,10 @@
 			localStorage.setItem("blogs", JSON.stringify(storage));
 
 			elem.remove();
+
+			if (storage.length == 0) {
+				container.querySelector("#empty").removeAttribute("hidden");
+			}
 		}
 	</script>
 </body>

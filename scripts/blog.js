@@ -70,6 +70,7 @@ diagBox.addEventListener("close", () => {
 		document.getElementById("summary-input").value = "";
 
 		container.appendChild(addTemp.content.cloneNode(true));
+		container.querySelector("#empty").setAttribute("hidden", "hidden");
 	}
 
 	/* Editing current blog */
