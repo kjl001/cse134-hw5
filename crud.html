@@ -25,10 +25,24 @@
 		<button id="add-blog" onclick="addBlog()">Add Blog</button>
 	</main>
 
+	<dialog id="add-dialog">
+		<form id="add-form" method="dialog">
+			<!--Set Title for blog-->
+			<label for="title-input">Title: </label>
+			<input type="text" name="title-input" id="title-input" required>
+			<!--Set Date for blog-->
+			<label for="date-input">Date: </label>
+			<input type="date" name="date-input" id="date-input" required>
+			<!--Set Summary for blog-->
+			<label for="summary-input">Summary: </label>
+			<textarea name="summary-input" id="summary-input" form="add-form" rows="4" cols="30" required></textarea>
+		</form>
+	</dialog>
+
 	<template id="blog-template">
 		<section id="blog">
 			<!--Post Title-->
-			<h2 id="title"></h2> <br>
+			<h2 id="title"></h2>
 			<!--Post Date-->
 			<time id="time"></time> <br>
 			<!--Post Summary-->
@@ -64,7 +78,21 @@
 			
 		}
 
+		const diagBox = document.getElementById("add-dialog");
+		function addDiag() {
+			diagBox.showModal();
+		}
+
+		diagBox.addEventListener("close", () => {
+			const addTemp = document.getElementById("blog-template");
+			addTemp.content.querySelector("#blog").querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
+			addTemp.content.querySelector("#blog").querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
+			addTemp.content.querySelector("#blog").querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
+		});
+
 		function addBlog() {
+
+
 			container.appendChild(template.content.cloneNode(true));
 		}
 	</script>
