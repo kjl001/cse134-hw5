@@ -68,23 +68,25 @@
 		container.appendChild(template.content.cloneNode(true));
 		container.appendChild(template.content.cloneNode(true));
 
-		/* Add first default blog */
-		container.children[0].querySelector("#title").innerHTML = "Started on Homework 4!";
-		container.children[0].querySelector("#time").innerHTML = "February 23, 2023";
-		container.children[0].querySelector("#summary").innerHTML = "Started on my Homework 4 assignment for CSE 134B. I also have other projects too, however.";
-		container.children[0].querySelector(".blog-id").id = 0;
+		if (container.children.length == 0) {
+			/* Add first default blog */
+			container.children[0].querySelector("#title").innerHTML = "Started on Homework 4!";
+			container.children[0].querySelector("#time").innerHTML = "February 23, 2023";
+			container.children[0].querySelector("#summary").innerHTML = "Started on my Homework 4 assignment for CSE 134B. I also have other projects too, however.";
+			container.children[0].querySelector(".blog-id").id = 0;
 
-		/* Add second default blog */
-		container.children[1].querySelector("#title").innerHTML = "Finished up a CSE 123 Project";
-		container.children[1].querySelector("#time").innerHTML = "February 27, 2023";
-		container.children[1].querySelector("#summary").innerHTML = "Finally finished PA3 for the class. Had to visit office hours for some questions.";
-		container.children[1].querySelector(".blog-id").id = 1;
+			/* Add second default blog */
+			container.children[1].querySelector("#title").innerHTML = "Finished up a CSE 123 Project";
+			container.children[1].querySelector("#time").innerHTML = "February 27, 2023";
+			container.children[1].querySelector("#summary").innerHTML = "Finally finished PA3 for the class. Had to visit office hours for some questions.";
+			container.children[1].querySelector(".blog-id").id = 1;
 
-		/* Add third default blog */
-		container.children[2].querySelector("#title").innerHTML = "Finished Homework 4!";
-		container.children[2].querySelector("#time").innerHTML = "March 1, 2023";
-		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
-		container.children[2].querySelector(".blog-id").id = 2;
+			/* Add third default blog */
+			container.children[2].querySelector("#title").innerHTML = "Finished Homework 4!";
+			container.children[2].querySelector("#time").innerHTML = "March 1, 2023";
+			container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
+			container.children[2].querySelector(".blog-id").id = 2;
+		}
 
 		/* Edit button */
 		function editDiag(elem) {
