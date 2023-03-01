@@ -173,17 +173,3 @@ form {
 	border-radius: 6px;
 	padding: 20px;
 }
-
-/* Random footer animation */
-footer {
-	width: 100px;
-	height: 2px;
-	background: pink;
-	position: relative;
-	animation: slide 3s infinite;
-}
-
-@keyframes slide {
-	from {left: -100px;}
-	to {left: 100vw;}
-}
