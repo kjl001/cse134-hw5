@@ -40,10 +40,6 @@ for (let i = 0; i < localLength; i++) {
 	container.children[i].querySelector(".blog-id").id = localStorage.getItem("blogs")[i].id;
 }
 
-
-/* Set to local storage */
-localStorage.setItem("blogs", JSON.stringify(storage));
-
 const diagBox = document.getElementById("diagBox");
 diagBox.addEventListener("close", () => {
 	/* When cancel or no input, just exit */
