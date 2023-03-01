@@ -21,7 +21,7 @@
 	<main>
 		<section id="container">
 
-		</section>
+		</section> <br>
 		<button id="add-blog" onclick="addDiag()">Add Blog</button>
 	</main>
 
@@ -113,22 +113,26 @@
 		container.children[1].querySelector("#summary").innerHTML = "Finally finished PA3 for the class. Had to visit office hours for some questions.";
 		container.children[1].querySelector(".blog-id").id = 1;
 
-		newBlog.title = "Finished up a CSE 123 Project";
-		newBlog.time = "2023-02-27";
-		newBlog.summary = "Finally finished PA3 for the class. Had to visit office hours for some questions.";
-		newBlog.index = 1;
-		storage.push(newBlog);
+		var newBlog2 = {
+			title: "Finished up a CSE 123 Project",
+			time: "2023-02-27",
+			summary: "Finally finished PA3 for the class. Had to visit office hours for some questions.",
+			index: 0
+		};
+		storage.push(newBlog2);
 
 		container.children[2].querySelector("#title").innerHTML = "Finished Homework 4!";
 		container.children[2].querySelector("#time").innerHTML = "2023-03-01";
 		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
 		container.children[2].querySelector(".blog-id").id = 2;
 
-		newBlog.title = "Finished Homework 4!";
-		newBlog.time = "2023-03-01";
-		newBlog.summary = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
-		newBlog.index = 2;
-		storage.push(newBlog);
+		var newBlog3 = {
+			title: "Finished Homework 4!",
+			time: "2023-03-01",
+			summary: "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.",
+			index: 0
+		};
+		storage.push(newBlog3);
 
 		/* Set to local storage */
 		localStorage.setItem("blogs", JSON.stringify(storage));
