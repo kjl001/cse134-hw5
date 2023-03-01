@@ -58,13 +58,11 @@
 		</section>
 	</template>
 
-	<script>
+	<script type="module">
 		import { index } from './scripts/blog.js';
 		import { currIndex } from './scripts/blog.js';
 		import { blog } from './scripts/blog.js';
 		import { storage } from './scripts/blog.js';
-		import { editDiag } from './scripts/blog.js';
-		import { addDiag } from './scripts/blog.js';
 
 		const container = document.getElementById("container");
 		const template = document.getElementById("blog-template");
@@ -87,6 +85,27 @@
 		container.children[2].querySelector("#summary").innerHTML = "Finished up Homework 4 for CSE 134B. Updated portfolio website with javascript.";
 
 		const diagBox = document.getElementById("diagBox");
+
+		/* Edit button */
+		function editDiag(elem) {
+			diagBox.querySelector("#blog-form").querySelector("#title-input").value = elem.querySelector("#title").innerHTML;
+			diagBox.querySelector("#blog-form").querySelector("#time-input").value = elem.querySelector("#time").innerHTML;
+			diagBox.querySelector("#blog-form").querySelector("#summary-input").value = elem.querySelector("#summary").innerHTML;
+
+			diagBox.querySelector("#blog-form").querySelector("#save").value = "Edit";
+
+			/* Set currIndex to be this index */
+			currIndex = elem.querySelector(".blog-id").innerHTML;
+
+			diagBox.showModal();
+		}
+
+		/* Add Button */
+		function addDiag() {
+			diagBox.querySelector("#blog-form").querySelector("#save").value = "Save";
+			diagBox.showModal();
+		}
+
 		diagBox.addEventListener("close", () => {
 			if (diagBox.returnValue == "Cancel" || document.getElementById("title-input").value == "" || document.getElementById("time-input").value == "" || document.getElementById("summary-input").value == "") {
 				document.getElementById("title-input").value = "";
@@ -115,8 +134,8 @@
 			else {
 				const editBlog = document.getElementById(currIndex).parentElement;
 				editBlog.querySelector("#title").innerHTML = DOMPurify.sanitize(document.getElementById("title-input").value);
-				editBlog.querySelector("time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
-				editBlog.querySelector("summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
+				editBlog.querySelector("#time").innerHTML = DOMPurify.sanitize(document.getElementById("time-input").value);
+				editBlog.querySelector("#summary").innerHTML = DOMPurify.sanitize(document.getElementById("summary-input").value);
 
 				/* Find index of element to edit */
 				for (let i = 0; i < storage.length; i++) {
