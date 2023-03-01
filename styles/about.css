@@ -5,6 +5,10 @@ body {
 	background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,120,121,1) 28%, rgba(0,212,255,1) 100%);
 }
 
+h3 {
+	text-decoration: underline;
+}
+
 main {
 	display: flex;
 	flex-direction: row;
@@ -115,12 +119,13 @@ main {
 	.menu-button-container {
 		display: flex;
 		margin-top: 20px;
+		position: relative;
+		z-index: 1;
 	}
 
 	#navbar {
 		position: absolute;
 		top: 0;
-		margin-top: 40px;
 		left: 0;
 		flex-direction: column;
 		width: 100%;
