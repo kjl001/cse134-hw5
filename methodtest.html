@@ -13,7 +13,7 @@
 <body>
 	<form>
 		<label for="record_id">Record ID: </label>
-		<input type="text" id="record_id" name="record_id">
+		<input type="text" id="record_id" name="record_id"> <br>
 		<label for="article_name">Article Name: </label>
 		<input type="text" id="article_name" name="article_name"> <br>
 		<label for="article_body">Article Body: </label>
@@ -52,7 +52,8 @@
 
 			if (response.ok) {
 				let responseText = await response.json();
-				console.log(responseText);
+				document.getElementById('date').innerText = responseText.form;
+				console.log(responseText.form);
 			}
 			else {
 				console.log("Post Function Error");
@@ -67,6 +68,7 @@
 			if (response.ok) {
 				const data = await response.json();
 				document.getElementById('response').innerText = data;
+				console.log(data);
 			}
 			else {
 				console.log('Get Function Error')
@@ -90,7 +92,7 @@
 
 			if (response.ok) {
 				const data = await response.json();
-				document.getElementById('record_id').innerText = data.json.record_id;
+				document.getElementById('record_id').value = data.json.record_id;
 				document.getElementById('article_name').value = data.json.article_name;
 				document.getElementById('article_body').innerText = data.json.article_body;
 				document.getElementById('date').innerText = data.json.date;
