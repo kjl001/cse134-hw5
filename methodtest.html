@@ -40,6 +40,9 @@
 		}
 
 		async function handlePost() {
+			const recID = encodeURIComponent(document.getElementById('record_id').value);
+			const artName = encodeURIComponent(document.getElementById('article_name').value);
+			const artBody = encodeURIComponent(document.getElementById('article_body').value);
 			const response = await fetch(`https://httpbin.org/post`, {
 				method: 'POST',
 				mode: 'cors',
@@ -47,13 +50,12 @@
 					'Content-Type': 'application/x-www-form-urlencoded',
 					'X-Sent-By': 'javascript'
 				},
-				body: encodeURIComponent(`${new Date()}`)
+				body: `record_id=${recID}&article_name=${artName}&article_body=${artBody}&date=${encodeURIComponent(new Date())}`
 			});
 
 			if (response.ok) {
 				let responseText = await response.json();
-				document.getElementById('date').innerText = responseText.form;
-				console.log(responseText.form);
+				console.log(responseText);
 			}
 			else {
 				console.log("Post Function Error");
@@ -62,10 +64,11 @@
 
 		/* Type in form and use that to GET */
 		async function handleGet() {
-			const recID = document.getElementById('record_id').value;
-			const artName = document.getElementById('article_name').value;
-			const artBody = document.getElementById('article_body').value;
-			const response = await fetch(`https://httpbin.org/get?record_id=${encodeURIComponent(recID)}&article_name=${encodeURIComponent(artName)}&article_body=${encodeURIComponent(artBody)}&date=${encodeURIComponent(new Date())}`, {
+			const recID = encodeURIComponent(document.getElementById('record_id').value);
+			const artName = encodeURIComponent(document.getElementById('article_name').value);
+			const artBody = encodeURIComponent(document.getElementById('article_body').value);
+			const url = `https://httpbin.org/get?record_id=${recID}&article_name=${artName}&article_body=${artBody}&date=${encodeURIComponent(new Date())}`;
+			const response = await fetch(url, {
 				method: 'GET'
 			});
 
