@@ -12,8 +12,11 @@
 
 <body>
 	<form>
-		<p id="record_id" name="record_id"></p> <br>
+		<label for="record_id">Record ID: </label>
+		<input type="text" id="record_id" name="record_id">
+		<label for="article_name">Article Name: </label>
 		<input type="text" id="article_name" name="article_name"> <br>
+		<label for="article_body">Article Body: </label>
 		<textarea id="article_body" name="article_body" rows="4" cols="50"></textarea> <br>
 		<input type="hidden" id="date" name="date">
 	</form>
@@ -44,12 +47,12 @@
 					'Content-Type': 'application/x-www-form-urlencoded',
 					'X-Sent-By': 'javascript'
 				},
-				body: encodeURIComponent(`message=${new Date()}`)
+				body: encodeURIComponent(`${new Date()}`)
 			});
 
 			if (response.ok) {
-				let responseText = await response.text();
-				document.getElementById("date").innerHTML = responseText;
+				let responseText = await response.json();
+				console.log(responseText);
 			}
 			else {
 				console.log("Post Function Error");
@@ -63,7 +66,7 @@
 
 			if (response.ok) {
 				const data = await response.json();
-				console.log(data);
+				document.getElementById('response').innerText = data;
 			}
 			else {
 				console.log('Get Function Error')
@@ -88,7 +91,7 @@
 			if (response.ok) {
 				const data = await response.json();
 				document.getElementById('record_id').innerText = data.json.record_id;
-				document.getElementById('article_name').innerText = data.json.article_name;
+				document.getElementById('article_name').value = data.json.article_name;
 				document.getElementById('article_body').innerText = data.json.article_body;
 				document.getElementById('date').innerText = data.json.date;
 			} else {
