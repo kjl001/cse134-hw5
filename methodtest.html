@@ -60,18 +60,21 @@
 			}
 		}
 
+		/* Type in form and use that to GET */
 		async function handleGet() {
-			const response = await fetch('https://httpbin.org/get', {
+			const recID = document.getElementById('record_id').value;
+			const artName = document.getElementById('article_name').value;
+			const artBody = document.getElementById('article_body').value;
+			const response = await fetch(`https://httpbin.org/get?record_id=${recID}&article_name=${artName}&article_body=${artBody}&date=${new Date()}`, {
 				method: 'GET'
 			});
 
 			if (response.ok) {
 				const data = await response.json();
-				document.getElementById('response').innerText = data;
 				console.log(data);
 			}
 			else {
-				console.log('Get Function Error')
+				console.log('Get Function Error');
 			}
 		}
 
