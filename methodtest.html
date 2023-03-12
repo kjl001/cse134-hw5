@@ -87,7 +87,10 @@
 
 			if (response.ok) {
 				const data = await response.json();
-				console.log(data);
+				document.getElementById('record_id').innerText = data.json.record_id;
+				document.getElementById('article_name').innerText = data.json.article_name;
+				document.getElementById('article_body').innerText = data.json.article_body;
+				document.getElementById('date').innerText = data.json.date;
 			} else {
 				console.log("Put Function Error");
 			}
