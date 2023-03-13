@@ -54,7 +54,7 @@ p {
 
 .menu-button, .menu-button::before, .menu-button::after {
 	display: block;
-	background-color: white;
+	background-color: blue;
 	position: absolute;
 	height: 4px;
 	width: 30px;
@@ -78,7 +78,7 @@ p {
 }
 
 #menu-toggle:checked + .menu-button-container .menu-button {
-	background: rgba(255, 255, 255, 0);
+	background: blue;
 }
 
 	#menu-toggle:checked + .menu-button-container .menu-button::after {
@@ -87,9 +87,13 @@ p {
 	}
 
 @media (max-width: 640px) {
+	form {
+		margin-top: 20px;
+	}
+
 	.menu-button-container {
 		display: flex;
-		margin-top: -50px;
+		margin-top: 20px;
 		position: relative;
 		z-index: 1;
 	}
