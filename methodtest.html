@@ -65,8 +65,8 @@
 
 				out += createTable(data.form);
 				out += createTable(data.headers);
-				out += "origin: " + data.origin + "\n";
-				out += "url: " + data.url;
+				out += `<p>origin: ${data.origin}</p>`;
+				out += `<p>url: ${data.url}`
 
 				document.getElementById("response").innerHTML = out;
 			}
@@ -80,18 +80,26 @@
 			const recID = encodeURIComponent(document.getElementById('id').value);
 			const artName = encodeURIComponent(document.getElementById('article_name').value);
 			const artBody = encodeURIComponent(document.getElementById('article_body').value);
-			const date = encodeURIComponent(document.getElementById('date').value);
-			const url = `https://httpbin.org/get?id=${recID}&article_name=${artName}&article_body=${artBody}&date=${date}`;
+			const url = `https://httpbin.org/get?id=${recID}&article_name=${artName}&article_body=${artBody}&date=${encodeURIComponent(new Date())}`;
 			const response = await fetch(url, {
 				method: 'GET',
+				mode: 'cors',
 				headers: {
 					'X-Request-ID': `${recID}`
 				}
 			});
 
 			if (response.ok) {
-				const data = await response.json();
-				console.log(data);
+				let data = await response.json();
+				let out = "";
+				document.getElementById('date').value = data.args.date;
+
+				out += createTable(data.args);
+				out += createTable(data.headers);
+				out += `<p>origin: ${data.origin}</p>`;
+				out += `<p>url: ${data.url}`
+
+				document.getElementById("response").innerHTML = out;
 			}
 			else {
 				console.log('Get Function Error');
@@ -114,8 +122,16 @@
 			});
 
 			if (response.ok) {
-				const data = await response.json();
+				let data = await response.json();
+				let out = "";
 				document.getElementById('date').value = data.form.date;
+
+				out += createTable(data.form);
+				out += createTable(data.headers);
+				out += `<p>origin: ${data.origin}</p>`;
+				out += `<p>url: ${data.url}`
+
+				document.getElementById("response").innerHTML = out;
 			} else {
 				console.log("Put Function Error");
 			}
@@ -125,18 +141,26 @@
 			const recID = encodeURIComponent(document.getElementById('id').value);
 			const artName = encodeURIComponent(document.getElementById('article_name').value);
 			const artBody = encodeURIComponent(document.getElementById('article_body').value);
-			const date = encodeURIComponent(document.getElementById('date').value);
-			const url = `https://httpbin.org/delete?id=${recID}&article_name=${artName}&article_body=${artBody}&date=${date}`;
+			const url = `https://httpbin.org/delete?id=${recID}&article_name=${artName}&article_body=${artBody}&date=${encodeURIComponent(new Date())}`;
 			const response = await fetch(url, {
 				method: 'DELETE',
+				mode: 'cors',
 				headers: {
 					'X-Request-ID': `${recID}`
 				}
 			});
 
 			if (response.ok) {
-				const data = await response.json();
-				console.log(data);
+				let data = await response.json();
+				let out = "";
+				document.getElementById('date').value = data.args.date;
+
+				out += createTable(data.args);
+				out += createTable(data.headers);
+				out += `<p>origin: ${data.origin}</p>`;
+				out += `<p>url: ${data.url}`
+
+				document.getElementById("response").innerHTML = out;
 			} else {
 				console.log("Delete Function Error");
 			}
