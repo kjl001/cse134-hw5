@@ -61,7 +61,7 @@
 				let data = await response.json();
 				document.getElementById('date').value = data.form.date;
 				document.getElementById('response').innerText = JSON.stringify(data.form);
-				createTable(data);
+				createTable(data.form);
 			}
 			else {
 				console.log("Post Function Error");
