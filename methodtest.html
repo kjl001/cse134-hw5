@@ -147,7 +147,7 @@
 			let table = document.createElement("table");
 
 			// Create table row tr element of a table
-			let tr = table.insertRow(-1);
+			let tr = table.insertRow(0);
 
 			for (let i = 0; i < cols.length; i++) {
 
@@ -160,9 +160,9 @@
 			}
 
 			/* Add cells to table */
+			let trow = table.insertRow(1);
 			for (let i = 0; i < list.length; i++) {
-				let trow = table.insertRow(-1);
-				let cell = trow.insertCell(-1);
+				let cell = trow.insertCell(i);
 				cell.innerHTML = list[cols[i]];
 			}
 
