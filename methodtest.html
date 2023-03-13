@@ -137,7 +137,7 @@
 		}
 
 		function showOutput(list) {
-			let out = "";
+			let out = `<table>`;
 			let cols = [];
 
 			out += `<tr>`;
@@ -153,7 +153,8 @@
 			}
 			out += `</tr>`;
 
-			document.getElementById('table').innerHTML = out;
+			out += `</table>`
+			document.getElementById('response').innerHTML = out;
 		}
 	</script>
 </body>
