@@ -56,7 +56,7 @@
 
 			if (response.ok) {
 				let responseText = await response.json();
-				console.log(responseText);
+				console.log(responseText.form.date);
 			}
 			else {
 				console.log("Post Function Error");
