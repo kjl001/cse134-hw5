@@ -62,7 +62,8 @@
 				let data = await response.json();
 				document.getElementById('date').value = data.form.date;
 				document.getElementById('response').innerText = JSON.stringify(data.form);
-				showOutput(data);
+				showOutput(data.form);
+				showOutput(data.headers);
 			}
 			else {
 				console.log("Post Function Error");
@@ -137,45 +138,32 @@
 		}
 
 		function showOutput(list) {
-			var cols = [];
-
-			for (var i = 0; i < list.length; i++) {
-				for (var k in list[i]) {
-					if (cols.indexOf(k) === -1) {
-
-						// Push all keys to the array
-						cols.push(k);
-					}
-				}
+			let cols = [];
+			for (let i in list) {
+				cols.push(i);
 			}
 
 			// Create a table element
-			var table = document.createElement("table");
+			let table = document.createElement("table");
 
 			// Create table row tr element of a table
-			var tr = table.insertRow(-1);
+			let tr = table.insertRow(-1);
 
-			for (var i = 0; i < cols.length; i++) {
+			for (let i = 0; i < cols.length; i++) {
 
 				// Create the table header th element
-				var theader = document.createElement("th");
+				let theader = document.createElement("th");
 				theader.innerHTML = cols[i];
 
 				// Append columnName to the table row
 				tr.appendChild(theader);
 			}
 
-			// Adding the data to the table
-			for (var i = 0; i < list.length; i++) {
-
-				// Create a new row
-				trow = table.insertRow(-1);
-				for (var j = 0; j < cols.length; j++) {
-					var cell = trow.insertCell(-1);
-
-					// Inserting the cell at particular place
-					cell.innerHTML = list[i][cols[j]];
-				}
+			/* Add cells to table */
+			for (let i = 0; i < list.length; i++) {
+				let trow = table.insertRow(-1);
+				let cell = trow.insertCell(-1);
+				cell.innerHTML = list[cols[i]];
 			}
 
 			// Add the newly created table containing json data
