@@ -55,8 +55,8 @@
 			});
 
 			if (response.ok) {
-				let responseText = await response.json();
-				console.log(responseText.form.date);
+				let data = await response.json();
+				document.getElementById('date').value = data.form.date;
 			}
 			else {
 				console.log("Post Function Error");
@@ -87,7 +87,6 @@
 			const recID = encodeURIComponent(document.getElementById('record_id').value);
 			const artName = encodeURIComponent(document.getElementById('article_name').value);
 			const artBody = encodeURIComponent(document.getElementById('article_body').value);
-			const date = new Date();
 			const response = await fetch('https://httpbin.org/put', {
 				method: 'PUT',
 				mode: 'cors',
@@ -95,12 +94,12 @@
 					'Content-Type': 'application/x-www-form-urlencoded',
 					'X-Sent-By': 'javascript'
 				},
-				body: `record_id=${recID}&article_name=${artName}&article_body=${artBody}&date=${encodeURIComponent(date)}`
+				body: `record_id=${recID}&article_name=${artName}&article_body=${artBody}&date=${encodeURIComponent(new Date())}`
 			});
 
 			if (response.ok) {
 				const data = await response.json();
-				console.log(data);
+				document.getElementById('date').value = data.form.date;
 			} else {
 				console.log("Put Function Error");
 			}
