@@ -1,17 +1,10 @@
-import * as React from 'react-dom';
-
 class ReactButton extends HTMLElement {
 	connectedCallback() {
-		const btn = document.createElement('button');
+		const btn = document.createElement('section');
 		this.attachShadow({ mode: 'open' }).appendChild(btn);
 
-		btn.addEventListener('click', () => {
-			btn.innerHTML = `Times Clicked: ${++this.count}`;
-		});
-
-		this.count = 0;
-		const root = React.createRoot(btn);
-		root.render(`Times Clicked: ${this.count}`);
+		const root = ReactDOM.createRoot(btn);
+		root.render(<p>Test</p>);
 	}
 }
 
