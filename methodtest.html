@@ -162,8 +162,10 @@
 			/* Add cells to table */
 			let trow = table.insertRow(1);
 			for (let i = 0; i < list.length; i++) {
-				let cell = trow.insertCell(i);
+				let cell = document.createElement("td");
 				cell.innerHTML = list[cols[i]];
+
+				trow.appendChild(cell);
 			}
 
 			// Add the newly created table containing json data
