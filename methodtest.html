@@ -62,7 +62,6 @@
 				document.getElementById('date').value = data.form.date;
 				document.getElementById('response').innerText = JSON.stringify(data.form);
 				createTable(data.form);
-				console.log(data.form[0]);
 			}
 			else {
 				console.log("Post Function Error");
@@ -138,8 +137,8 @@
 
 		function createTable(list) {
 			let cols = [];
-			for (let i = 0; i < list.length; i++) {
-				cols.push(list[i]);
+			for (let x in list) {
+				cols.push(x);
 			}
 
 			console.log(cols);
