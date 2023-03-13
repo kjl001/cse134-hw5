@@ -61,7 +61,7 @@
 				let data = await response.json();
 				document.getElementById('date').value = data.form.date;
 				document.getElementById('response').innerText = JSON.stringify(data.form);
-				createTable(data.form);
+				createTable(data);
 			}
 			else {
 				console.log("Post Function Error");
@@ -136,21 +136,30 @@
 		}
 
 		function createTable(list) {
-			let keys = [];
-			let message = '';
-			for (let x in list) {
-				keys.push(String(x));
-				message += String(x);
+			let cols = [];
+
+			for (let i = 0; i < list.length; i++) {
+				for (let k in list[i]) {
+					if (cols.indexOf(k) == -1) cols.push(k);
+				}
 			}
 
-			message += '\n';
+			let table = document.createElement('table');
 
-			for (let i = 0; i < keys.length; i++) {
-				message += String([list[keys[i]]]);
+			let tr = table.insertRow(-1);
+
+			for (let i = 0; i < cols.length; i++) {
+				trow = table.insertRow(-1);
+				for (var k = 0; k < cols.length; k++) {
+					let cell = trow.inserCell(-1);
+
+					cell.innerHTML = list[i][cols[k]];
+				}
 			}
 
-			console.log(message);
-			/* Get keys as array, loop through array as keys and call each one by name */
+			let el = document.getElementById('response');
+			el.innerHTML = '';
+			el.appendChild(table);
 		}
 	</script>
 </body>
