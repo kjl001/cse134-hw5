@@ -17,6 +17,8 @@ p {
 	padding: 0;
 	overflow: hidden;
 	background-color: slategray;
+	font-size: 2vw;
+	margin-bottom: 20px;
 }
 
 	#navbar > li {
