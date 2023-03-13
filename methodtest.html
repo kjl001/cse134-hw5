@@ -65,7 +65,8 @@
 
 				out += createTable(data.form);
 				out += createTable(data.headers);
-				out += "Test";
+				out += "origin: " + data.origin + "\n";
+				out += "url: " + data.url;
 
 				document.getElementById("response").innerHTML = out;
 			}
