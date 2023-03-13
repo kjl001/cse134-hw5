@@ -58,7 +58,7 @@
 			if (response.ok) {
 				let data = await response.json();
 				document.getElementById('date').value = data.form.date;
-				document.getElementById('response').innerText = data.form.stringify();
+				document.getElementById('response').innerText = JSON.stringify(data.form);
 			}
 			else {
 				console.log("Post Function Error");
@@ -132,7 +132,9 @@
 			}
 		}
 
+		function createTable() {
 
+		}
 	</script>
 </body>
 </html>
