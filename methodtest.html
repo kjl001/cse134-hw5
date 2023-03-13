@@ -109,7 +109,7 @@
 			const recID = encodeURIComponent(document.getElementById('record_id').value);
 			const artName = encodeURIComponent(document.getElementById('article_name').value);
 			const artBody = encodeURIComponent(document.getElementById('article_body').value);
-			const date = encodeURIComponent(document.getElementById('date').innerText);
+			const date = encodeURIComponent(document.getElementById('date').value);
 			const url = `https://httpbin.org/get?record_id=${recID}&article_name=${artName}&article_body=${artBody}&date=${date}`;
 			const response = await fetch(url, {
 				method: 'DELETE',
