@@ -140,13 +140,13 @@
 			let message = "";
 			for (let x in list) {
 				keys.push(x);
-				message.concat(x + "	");
+				message.concat(`${x}` + "	");
 			}
 
 			message.concat("\n");
 
 			for (let i = 0; i < keys.length; i++) {
-				message.concat(list[keys[i]] + "	");
+				message.concat(`${list[keys[i]]}` + "	");
 			}
 
 			console.log(message);
