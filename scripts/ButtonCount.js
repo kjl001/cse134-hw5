@@ -1,17 +1,13 @@
-let count = 0;
-
 class ButtonCount extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 
-		function addCount() {
-			count++;
-			this.shadowRoot.innerHTML = `<button onclick='addCount()'>Times Clicked: ${count}</button>`;
-		}
-
-
-		this.shadowRoot.innerHTML = `<button onclick='addCount()'>Times Clicked: ${count}</button>`;
+		this.count = 0;
+		this.shadowRoot.innerHTML = `<button>Times Clicked: ${this.count}</button>`;
+		this.shadowRoot.querySelector('button').addEventListener('click', () => {
+			this.shadowRoot.querySelector('button').innerHTML = `Times Clicked: ${++this.count}`;
+		});
 	}
 }
 
