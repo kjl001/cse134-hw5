@@ -148,12 +148,17 @@
 
 			let tr = table.insertRow(-1);
 
-			for (let i = 0; i < cols.length; i++) {
-				trow = table.insertRow(-1);
-				for (var k = 0; k < cols.length; k++) {
-					let cell = trow.inserCell(-1);
+			for (var i = 0; i < cols.length; i++) {
+				var theader = document.createElement("th");
+				theader.innerHTML = cols[i];
+				tr.appendChild(theader);
+			}
 
-					cell.innerHTML = list[i][cols[k]];
+			for (var i = 0; i < list.length; i++) {
+				trow = table.insertRow(-1);
+				for (var j = 0; j < cols.length; j++) {
+					var cell = trow.insertCell(-1);
+					cell.innerHTML = list[i][cols[j]];
 				}
 			}
 
