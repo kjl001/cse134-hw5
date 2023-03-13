@@ -136,12 +136,21 @@
 		}
 
 		function createTable(list) {
-			let cols = [];
+			let keys = [];
+			let message = "";
 			for (let x in list) {
-				cols.push(x);
+				keys.push(x);
+				message.concat(x + "	");
 			}
 
-			console.log(cols);
+			message.concat("\n");
+
+			for (let i = 0; i < keys.length; i++) {
+				message.concat(list[keys[i]] + "	");
+			}
+
+			console.log(message);
+			/* Get keys as array, loop through array as keys and call each one by name */
 		}
 	</script>
 </body>
