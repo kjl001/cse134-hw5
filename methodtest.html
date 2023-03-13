@@ -12,6 +12,21 @@
 </head>
 
 <body>
+	<header>
+		<input id="menu-toggle" type="checkbox">
+		<label class="menu-button-container" for="menu-toggle">
+			<div class="menu-button"></div>
+		</label>
+		<ul id="navbar">
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./about.html">About Me</a></li>
+			<li><a href="./projects.html">Projects</a></li>
+			<li><a href="./resume.html">Resume</a></li>
+			<li><a href="./contact.html">Contact Me</a></li>
+			<li><a href="./methodtest.html">Method Test</a></li>
+		</ul>
+	</header>
+
 	<form>
 		<label for="id">ID: </label>
 		<input type="text" id="id" name="id"> <br>
@@ -32,7 +47,6 @@
 	<hr>
 
 	<output name="response" id="response"></output>
-	<table id="table"></table>
 
 	<script type="module">
 		window.addEventListener('DOMContentLoaded', init);
@@ -66,8 +80,8 @@
 
 				out += createTable(data.form);
 				out += createTable(data.headers);
-				out += `<p>origin: ${data.origin}</p>`;
-				out += `<p>url: ${data.url}`
+				out += `<p><b>origin:</b> ${data.origin}</p>`;
+				out += `<p><b>url:</b> ${data.url}`
 
 				document.getElementById("response").innerHTML = out;
 			}
@@ -97,8 +111,8 @@
 
 				out += createTable(data.args);
 				out += createTable(data.headers);
-				out += `<p>origin: ${data.origin}</p>`;
-				out += `<p>url: ${data.url}`
+				out += `<p><b>origin:</b> ${data.origin}</p>`;
+				out += `<p><b>url:</b> ${data.url}`
 
 				document.getElementById("response").innerHTML = out;
 			}
@@ -129,8 +143,8 @@
 
 				out += createTable(data.form);
 				out += createTable(data.headers);
-				out += `<p>origin: ${data.origin}</p>`;
-				out += `<p>url: ${data.url}`
+				out += `<p><b>origin:</b> ${data.origin}</p>`;
+				out += `<p><b>url:</b> ${data.url}`
 
 				document.getElementById("response").innerHTML = out;
 			} else {
@@ -158,8 +172,8 @@
 
 				out += createTable(data.args);
 				out += createTable(data.headers);
-				out += `<p>origin: ${data.origin}</p>`;
-				out += `<p>url: ${data.url}`
+				out += `<p><b>origin:</b> ${data.origin}</p>`;
+				out += `<p><b>url:</b> ${data.url}`
 
 				document.getElementById("response").innerHTML = out;
 			} else {
