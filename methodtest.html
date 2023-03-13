@@ -140,16 +140,16 @@
 			let message = "";
 			for (let x in list) {
 				keys.push(x);
-				message.concat(`${x}` + "	");
+				message.concat(`${x}`);
 			}
 
 			message.concat("\n");
 
 			for (let i = 0; i < keys.length; i++) {
-				message.concat(`${list[keys[i]]}` + "	");
+				message.concat(`${list[keys[i]]}`);
 			}
 
-			console.log(list[keys[0]]);
+			console.log(message);
 			/* Get keys as array, loop through array as keys and call each one by name */
 		}
 	</script>
