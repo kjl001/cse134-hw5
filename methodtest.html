@@ -63,7 +63,6 @@
 				document.getElementById('date').value = data.form.date;
 				document.getElementById('response').innerText = JSON.stringify(data.form);
 				showOutput(data.form);
-				showOutput(data.headers);
 			}
 			else {
 				console.log("Post Function Error");
@@ -138,40 +137,23 @@
 		}
 
 		function showOutput(list) {
+			let out = "";
 			let cols = [];
+
+			out += `<tr>`;
 			for (let i in list) {
 				cols.push(String(i));
+				out += `<th>${String(i)}</th>`;
 			}
+			out += `</tr>`
 
-			// Create a table element
-			let table = document.createElement("table");
-
-			// Create table row tr element of a table
-			let tr = table.insertRow(0);
-
+			out += `<tr>`;
 			for (let i = 0; i < cols.length; i++) {
-
-				// Create the table header th element
-				let theader = document.createElement("th");
-				theader.innerHTML = cols[i];
-
-				// Append columnName to the table row
-				tr.appendChild(theader);
+				out += `<td>${list[cols[i]]}`;
 			}
+			out += `</tr>`;
 
-			/* Add cells to table */
-			let trow = table.insertRow(1);
-			for (let i = 0; i < list.length; i++) {
-				let cell = document.createElement("td");
-				cell.innerHTML = list[cols[i]];
-
-				trow.appendChild(cell);
-			}
-
-			// Add the newly created table containing json data
-			var el = document.getElementById("table");
-			el.innerHTML = "";
-			el.appendChild(table);
+			document.getElementById('table').innerHTML = out;
 		}
 	</script>
 </body>
