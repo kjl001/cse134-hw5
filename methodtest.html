@@ -31,6 +31,7 @@
 	<hr>
 
 	<output name="response" id="response"></output>
+	<table id="table"></table>
 
 	<script type="module">
 		window.addEventListener('DOMContentLoaded', init);
@@ -162,7 +163,7 @@
 				}
 			}
 
-			let el = document.getElementById('response');
+			let el = document.getElementById('table');
 			el.innerHTML = '';
 			el.appendChild(table);
 		}
