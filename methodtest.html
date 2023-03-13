@@ -140,14 +140,13 @@
 			let message = '';
 			for (let x in list) {
 				keys.push(String(x));
-				message += 'a';
+				message += String(x);
 			}
 
+			message += '\n';
 
-			let vals = [];
 			for (let i = 0; i < keys.length; i++) {
-				vals.push(String[list[keys[i]]]);
-				message += 'b';
+				message += String([list[keys[i]]]);
 			}
 
 			console.log(message);
