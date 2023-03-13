@@ -4,7 +4,7 @@ class ReactButton extends HTMLElement {
 		this.attachShadow({ mode: 'open' }).appendChild(btn);
 
 		const root = ReactDOM.createRoot(btn);
-		root.render(<p>Test</p>);
+		root.render(`<p>Test</p>`);
 	}
 }
 
