@@ -28,6 +28,8 @@
 	<button type="button" id="putBtn">PUT</button>
 	<button type="button" id="deleteBtn">DELETE</button>
 
+	<hr>
+
 	<output name="response" id="response"></output>
 
 	<script type="module">
@@ -59,6 +61,7 @@
 				let data = await response.json();
 				document.getElementById('date').value = data.form.date;
 				document.getElementById('response').innerText = JSON.stringify(data.form);
+				createTable(data);
 			}
 			else {
 				console.log("Post Function Error");
@@ -132,8 +135,13 @@
 			}
 		}
 
-		function createTable() {
+		function createTable(list) {
+			let cols = [];
+			for (let i = 0; i < list.length; i++) {
+				cols.push(list[i]);
+			}
 
+			console.log(cols);
 		}
 	</script>
 </body>
