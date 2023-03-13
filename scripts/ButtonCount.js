@@ -5,12 +5,12 @@ class ButtonCount extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 
-		this.shadowRoot.innerHTML = `<button onclick='addCount()'>Times Clicked: ${count}</button>`;
+		this.shadowRoot.innerHTML = `<button onclick='this.addCount()'>Times Clicked: ${count}</button>`;
 	}
 
 	addCount() {
 		count++;
-		this.shadowRoot.innerHTML = `<button onclick='addCount()'>Times Clicked: ${count}</button>`;
+		this.shadowRoot.innerHTML = `<button onclick='this.addCount()'>Times Clicked: ${count}</button>`;
 	}
 }
 
