@@ -1,5 +1,6 @@
 <button type="button" onclick="count++">Times Clicked: {{count}}</button>
 
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script>
 	import { ref, defineComponent } from 'vue';
 	export default defineComponent({
