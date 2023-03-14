@@ -1,5 +1,3 @@
-import VueButton from './VueButton.ce.vue';
-
 class ReactButton extends HTMLElement {
 	connectedCallback() {
 		this.count = 0;
@@ -16,4 +14,3 @@ class ReactButton extends HTMLElement {
 }
 
 customElements.define('react-button', ReactButton);
-customElements.define('vue-button', defineCustomElement(VueButton));
