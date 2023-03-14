@@ -1,4 +1,3 @@
-https://frabjous-banoffee-91d65f.netlify.app/nativedialogs.html
-https://frabjous-banoffee-91d65f.netlify.app/customdialogs.html
-https://frabjous-banoffee-91d65f.netlify.app/crud.html
-https://frabjous-banoffee-91d65f.netlify.app/stylecrud.html
+https://tourmaline-moonbeam-47899a.netlify.app/methodtest.html
+https://tourmaline-moonbeam-47899a.netlify.app/webcomponent.html
+https://tourmaline-moonbeam-47899a.netlify.app/extracredit.html
