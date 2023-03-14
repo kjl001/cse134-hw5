@@ -1,10 +1,10 @@
 class ReactButton extends HTMLElement {
 	connectedCallback() {
-		const btn = document.createElement('section');
+		const btn = document.createElement('button');
 		this.attachShadow({ mode: 'open' }).appendChild(btn);
 
 		const root = ReactDOM.createRoot(btn);
-		root.render(`<p>Test</p>`);
+		root.render('Testing');
 	}
 }
 
