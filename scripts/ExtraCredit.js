@@ -1,4 +1,4 @@
-import VueButton from 'VueButton.ce.vue';
+import VueButton from './VueButton.ce.vue';
 
 class ReactButton extends HTMLElement {
 	connectedCallback() {
